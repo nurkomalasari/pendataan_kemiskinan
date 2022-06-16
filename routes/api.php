@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 Route::post('hasilSurvey/create', [HasilSurveyController::class, 'store']);
-Route::post('/login', [LoginController::class, 'APIlogin']);
+Route::post('/login', [LoginController::class, 'login']);

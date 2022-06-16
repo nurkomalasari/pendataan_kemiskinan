@@ -12,52 +12,22 @@ class LoginController extends Controller
 {
     public function login(Request $request)
     {
-        $input = $request->all();
-
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
-        if (auth()->attempt(array('email' => $input['email'], 'password' => $input['password']))) {
-            if (auth()->user()->role == 'admin') {
-                return redirect()->route('admin.home');
-            } else {
-                return redirect()->route('home');
-            }
-        } else {
-            return redirect()->route('login')
-                ->with('error', 'Email-Address And Password Are Wrong.');
-        }
-    }
-
-    public function APIlogin(Request $request)
-    {
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        if ($this->fails()) {
-            return response(['errors' => $this->errors()->all()], 422);
-        }
 
         $user = User::where('email', $request->email)->first();
-        if ($user) {
-            if (Hash::check($request->password, $user->password)) {
-                $token = $user->createToken('Laravel Password Grant Client')->accessToken;
-                $response = ['token' => $token];
-
-                return response($response, 200);
-            } else {
-                $response = ["message" => "Password mismatch"];
-
-                return response($response, 422);
-            }
-        } else {
-            $response = ["message" => 'User does not exist'];
-
+        if (!$user || !Hash::check($request->password, $user->password)) {
+            $response = ["message" => 'Failed'];
             return response($response, 422);
         }
+        $token = $user->createToken($request->email)->plainTextToken;
+        return response()->json(
+            [
+                "token" => $token,
+                "user" => $user
+            ]
+        );
     }
 }
