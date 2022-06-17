@@ -11,10 +11,10 @@ class PertanyaanController extends Controller
 {
     public function index()
     {
-        $penduduk = Pertanyaan::get();
-        if ($penduduk) {
+        $pertanyaan = Pertanyaan::get();
+        if ($pertanyaan) {
             return ResponseFormatter::success(
-                $penduduk,
+                $pertanyaan,
                 'Data opsi jawaban Berhasil di ambil'
             );
         } else {

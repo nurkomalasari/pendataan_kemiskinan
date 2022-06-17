@@ -92,10 +92,14 @@
                         var agama = $("#agama").val();
                         var id_status = $("#id_status").val();
                         var pekerjaan = $("#pekerjaan").val();
-                        var kewarganegaraan = $("#kewarganegaraan").val();
+
                         var district_id = $("#district_id").val();
                         var village_id = $("#village_id").val();
                         var alamat_lengkap = $("#alamat_lengkap").val();
+                        var longitude = $("#longitude").val();
+                        var latitude = $("#latitude").val();
+
+
 
 
                         $.ajax({
@@ -108,10 +112,14 @@
                                 agama: agama,
                                 id_status: id_status,
                                 pekerjaan: pekerjaan,
-                                kewarganegaraan: kewarganegaraan,
+
                                 district_id: district_id,
                                 village_id: village_id,
                                 alamat_lengkap: alamat_lengkap,
+                                longitude: longitude,
+                                latitude: latitude,
+
+
 
                             },
 
@@ -142,10 +150,14 @@
                         var agama = $("#agama").val();
                         var id_status = $("#id_status").val();
                         var pekerjaan = $("#pekerjaan").val();
-                        var kewarganegaraan = $("#kewarganegaraan").val();
+
                         var district_id = $("#district_id").val();
                         var village_id = $("#village_id").val();
                         var alamat_lengkap = $("#alamat_lengkap").val();
+                        var longitude = $("#longitude").val();
+                        var latitude = $("#latitude").val();
+
+
 
                         $.ajax({
                             type: "get",
@@ -157,11 +169,12 @@
                                 agama: agama,
                                 id_status: id_status,
                                 pekerjaan: pekerjaan,
-                                kewarganegaraan: kewarganegaraan,
+
                                 district_id: district_id,
                                 village_id: village_id,
                                 alamat_lengkap: alamat_lengkap,
-
+                                longitude: longitude,
+                                latitude: latitude,
                             },
 
                             success: function(data) {
@@ -288,7 +301,7 @@
             var agama = $("#agama").val();
             var id_status = $("#id_status").val();
             var pekerjaan = $("#pekerjaan").val();
-            var kewarganegaraan = $("#kewarganegaraan").val();
+
 
             $.ajax({
                 type: "get",
@@ -301,7 +314,7 @@
                     agama: agama,
                     id_status: id_status,
                     pekerjaan: pekerjaan,
-                    kewarganegaraan: kewarganegaraan,
+
 
 
 
@@ -336,7 +349,7 @@
             var agama = $("#agama").val();
             var id_status = $("#id_status").val();
             var pekerjaan = $("#pekerjaan").val();
-            var kewarganegaraan = $("#kewarganegaraan").val();
+
 
             $.ajax({
                 type: "get",
@@ -349,7 +362,7 @@
                     agama: agama,
                     id_status: id_status,
                     pekerjaan: pekerjaan,
-                    kewarganegaraan: kewarganegaraan,
+
 
 
 

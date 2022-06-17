@@ -18,14 +18,17 @@
 
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Pekerjaan</th>
-                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        Kewargangeraan</th>
+
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Kecamatan</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Desa</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Alamat Lengkap</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                        Logitude</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                        Latitude</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Action</th>
 
@@ -66,9 +69,7 @@
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->pekerjaan }}</span>
                         </td>
-                        <td>
-                            <span class="text-xs font-weight-bold">{{ $item->kewarganegaraan }}</span>
-                        </td>
+
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->district->name ?? '' }}</span>
                         </td>
@@ -77,6 +78,12 @@
                         </td>
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->alamat_lengkap }}</span>
+                        </td>
+                        <td>
+                            <span class="text-xs font-weight-bold">{{ $item->longitude }}</span>
+                        </td>
+                        <td>
+                            <span class="text-xs font-weight-bold">{{ $item->latitude }}</span>
                         </td>
                         <td class="align-middle">
                             <button class="btn btn-warning" onclick="show({{ $item->id }})">Edit</button>

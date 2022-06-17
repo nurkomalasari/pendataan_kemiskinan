@@ -10,7 +10,7 @@
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Desa</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
-                        Opsi Jawaban</th>
+                        Jawaban Survey</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                         Tanggal</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
@@ -42,14 +42,17 @@
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->penduduk->nama }}</span>
                         </td>
-
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->penduduk->district->name }}</span>
                         </td>
 
                         <td>
-                            <span class="text-xs font-weight-bold">{{ $item->opsiJawaban->pilihan_jawaban }}</span>
+                            <span class="text-xs font-weight-bold">{{ $item->id_opsi_jawaban }}</span>
                         </td>
+
+                        {{-- <td>
+                            <span class="text-xs font-weight-bold">{{ $item->opsiJawaban->pilihan_jawaban }}</span>
+                        </td> --}}
 
 
                         {{-- <td>
@@ -70,10 +73,8 @@
         </table>
     </div>
 </div>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap4.min.css">
-
 <script>
     $(document).ready(function() {
-        $('#table').DataTable();
+        $('.table').DataTable();
     });
 </script>

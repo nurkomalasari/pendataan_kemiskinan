@@ -12,7 +12,7 @@ class Penduduk extends Model
 
     protected $table = 'penduduks';
     protected $fillable = [
-        'nama', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'id_status', 'pekerjaan', 'kewarganegaraan', 'district_id', 'village_id', 'alamat_lengkap'
+        'nama', 'tanggal_lahir', 'jenis_kelamin', 'agama', 'id_status', 'pekerjaan', 'district_id', 'village_id', 'alamat_lengkap', 'longitude', 'latitude'
     ];
 
     public function district()

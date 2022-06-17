@@ -60,10 +60,12 @@ class PendudukController extends Controller
             'agama' => 'required',
             'id_status' => 'required',
             'pekerjaan' => 'required',
-            'kewarganegaraan' => 'required',
             'district_id' => 'required',
             'village_id' => 'required',
             'alamat_lengkap' => 'required',
+            'longitude' => 'required',
+            'latitude' => 'required',
+
 
 
 
@@ -75,10 +77,11 @@ class PendudukController extends Controller
             'agama'     =>  $request->agama,
             'id_status'     =>  $request->id_status,
             'pekerjaan'     =>  $request->pekerjaan,
-            'kewarganegaraan'     =>  $request->kewarganegaraan,
             'district_id'     =>  $request->district_id,
             'village_id'     =>  $request->village_id,
             'alamat_lengkap'     =>  $request->alamat_lengkap,
+            'longitude' => $request->longitude,
+            'latitude' => $request->latitude,
 
 
         );
@@ -143,11 +146,11 @@ class PendudukController extends Controller
         $data->agama = $request->agama;
         $data->id_status = $request->id_status;
         $data->pekerjaan = $request->pekerjaan;
-        $data->kewarganegaraan = $request->kewarganegaraan;
         $data->district_id = $request->district_id;
         $data->village_id = $request->village_id;
         $data->alamat_lengkap = $request->alamat_lengkap;
-
+        $data->longitude = $request->longitude;
+        $data->latitude = $request->latitude;
 
         $data->save();
     }

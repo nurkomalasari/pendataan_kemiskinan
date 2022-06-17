@@ -177,8 +177,10 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::group(['middleware' => 'checkRole:admin'], function () {
+    Route::get('admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home');
+});
 
-Route::get('admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('checkRole:admin');
-
-
-Route::get('surveyor', [App\Http\Controllers\HomeController::class, 'index'])->name('home.surveyor')->middleware(['checkRole:surveyor']);
+Route::group(['middleware' => 'checkRole:surveyor'], function () {
+    Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home.surveyor');
+});

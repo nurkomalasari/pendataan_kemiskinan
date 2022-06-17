@@ -21,10 +21,11 @@ class CreatePenduduksTable extends Migration
             $table->string('agama');
             $table->foreignId('id_status');
             $table->string('pekerjaan');
-            $table->string('kewarganegaraan');
             $table->foreignId('district');
             $table->foreignId('village');
             $table->string('alamat_lengkap');
+            $table->string('longitude');
+            $table->string('latitude');
             $table->softDeletes();
             $table->timestamps();
         });
