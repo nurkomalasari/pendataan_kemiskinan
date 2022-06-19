@@ -31,8 +31,7 @@
         </select><br>
         <input type="text" name="pekerjaan" placeholder="Pekerjaan" id="pekerjaan" class="form-control"
             value="{{ $data->pekerjaan }}"><br>
-        <input type="text" name="kewarganegaraan" placeholder="Kewarganegaraan" id="kewarganegaraan"
-            class="form-control" value="{{ $data->kewarganegaraan }}"><br>
+
         <select class="form-select" id="district_id" name="district_id" required>
             <option value="">{{ $data->district->name ?? '' }}</option>
 
@@ -48,6 +47,10 @@
         </select>
         <label for="exampleFormControlTextarea1" class="form-label">Alamat Lengkap</label>
         <textarea class="form-control" id="alamat_lengkap" rows="3">{{ $data->alamat_lengkap }}</textarea>
+        <input type="text" name="longitude" placeholder="longitude" id="longitude" class="form-control"
+            value="{{ $data->longitude }}"><br>
+        <input type="text" name="latitude" placeholder="latitude" id="latitude" class="form-control"
+            value="{{ $data->latitude }}"><br>
 
         <div class="form-group mt-2">
             <button class="btn btn-success" onclick="edit({{ $data->id }})">Update</button>

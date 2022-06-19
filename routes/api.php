@@ -25,6 +25,12 @@ Route::group(['middleware' => 'checkRole:surveyor'], function () {
     Route::get('/opsiJawaban', [OpsiJawabanController::class, 'index']);
 });
 
+Route::group(['middleware' => 'checkRole:surveyor'], function () {
+    Route::post('hasilSurvey/create', [HasilSurveyController::class, 'store']);
+    Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
+    Route::get('/opsiJawaban', [OpsiJawabanController::class, 'index']);
+});
+
 
 
 Route::post('/login', [LoginController::class, 'login']);

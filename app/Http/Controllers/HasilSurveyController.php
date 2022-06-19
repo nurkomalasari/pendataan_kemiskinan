@@ -66,7 +66,7 @@ class HasilSurveyController extends Controller
 
     public function read()
     {
-        $hasil = HasilSurvei::with(['opsiJawaban'])->get();
+        $hasil = HasilSurvei::with(['opsiJawaban'])->orderBy('id', 'DESC')->get();
         return view('hasilsurvey.read')->with([
 
             'hasil' => $hasil
