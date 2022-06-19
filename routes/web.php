@@ -176,6 +176,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/logincoba', function () {
+    return view('cobalogin');
+});
+
 Auth::routes();
 
 Route::get('admin', [App\Http\Controllers\HomeController::class, 'adminHome'])->name('admin.home')->middleware('checkRole:admin');

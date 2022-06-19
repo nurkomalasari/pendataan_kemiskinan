@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\API\HasilSurveyController;
 use App\Http\Controllers\API\LoginController;
+use App\Http\Controllers\API\PertanyaanController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::group(['middleware' => 'checkRole:surveyor'], function () {
+    Route::post('hasilSurvey/create', [HasilSurveyController::class, 'store']);
+    Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
+    Route::get('/opsiJawaban', [OpsiJawabanController::class, 'index']);
 });
 
 
-Route::post('hasilSurvey/create', [HasilSurveyController::class, 'store']);
+
 Route::post('/login', [LoginController::class, 'login']);
