@@ -4,7 +4,9 @@ use Faker\Guesser\Name;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\ClusteringController;
+use App\Http\Controllers\ClusteringProcessClontroller;
 use App\Http\Controllers\DistrictController;
+use App\Http\Controllers\HasilClusteringController;
 use App\Http\Controllers\HasilSurveyController;
 use App\Http\Controllers\OpsiJawabanController;
 use App\Http\Controllers\PendudukController;
@@ -188,3 +190,14 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
 Route::group(['middleware' => 'checkRole:surveyor'], function () {
     Route::get('admin', [App\Http\Controllers\HomeController::class, 'index'])->name('home.surveyor');
 });
+
+Route::get('/hasilClustering', [HasilClusteringController::class, 'index']);
+Route::get('/hasilClustering/read', [HasilClusteringController::class, 'read']);
+Route::get('/newClustering', [HasilClusteringController::class, 'getHasilClustering']);
+
+Route::get('/chart', [HasilClusteringController::class, 'chart']);
+
+Route::get('/groupCluster', [HasilClusteringController::class, 'clusterByDistrict']);
+Route::get('/groupCluster/dua', [HasilClusteringController::class, 'clusterDua']);
+Route::get('/groupCluster/satu', [HasilClusteringController::class, 'clusterSatu']);
+Route::get('/groupCluster/echart', [HasilClusteringController::class, 'echart']);

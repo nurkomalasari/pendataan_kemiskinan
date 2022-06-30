@@ -5,7 +5,7 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
                 target="_blank">
-                <img src="{{ asset('dashboard') }}/assets/img/logo-ct.png" class="navbar-brand-img h-100"
+                <img src="<?php echo e(asset('dashboard')); ?>/assets/img/logo-ct.png" class="navbar-brand-img h-100"
                     alt="main_logo">
                 <span class="ms-1 font-weight-bold">Penkin</span>
             </a>
@@ -20,9 +20,9 @@
                 </li>
 
                 <li class="nav-item ">
-                    <a class=" nav-link {{ request()->is('pertanyaan/index') ? ' active' : '' }}"
+                    <a class=" nav-link <?php echo e(request()->is('pertanyaan/index') ? ' active' : ''); ?>"
                         href="
-                    {{ url('pertanyaan/index') }}">
+                    <?php echo e(url('pertanyaan/index')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 40 44" version="1.1"
@@ -49,8 +49,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link{{ request()->is('status/index') ? ' active' : '' }}"
-                        href="{{ url('status/index') }}">
+                    <a class="nav-link<?php echo e(request()->is('status/index') ? ' active' : ''); ?>"
+                        href="<?php echo e(url('status/index')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="20px" viewBox="0 0 40 40" version="1.1"
@@ -83,8 +83,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('hasilClustering') ? 'active' : '' }}"
-                        href="{{ url('hasilClustering') }}">
+                    <a class="nav-link <?php echo e(request()->is('hasilClustering') ? 'active' : ''); ?>"
+                        href="<?php echo e(url('hasilClustering')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 45 40" version="1.1"
@@ -111,8 +111,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('penduduk/index') ? ' active' : '' }}"
-                        href="{{ url('penduduk/index') }}">
+                    <a class="nav-link <?php echo e(request()->is('penduduk/index') ? ' active' : ''); ?>"
+                        href="<?php echo e(url('penduduk/index')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -139,8 +139,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('hasilSurvey/index') ? ' active' : '' }} "
-                        href="{{ url('hasilSurvey/index') }}">
+                    <a class="nav-link <?php echo e(request()->is('hasilSurvey/index') ? ' active' : ''); ?> "
+                        href="<?php echo e(url('hasilSurvey/index')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
@@ -167,8 +167,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('surveyor/index') ? ' active' : '' }} "
-                        href="{{ url('surveyor/index') }}">
+                    <a class="nav-link <?php echo e(request()->is('surveyor/index') ? ' active' : ''); ?> "
+                        href="<?php echo e(url('surveyor/index')); ?>">
                         <div
                             class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                             <svg width="12px" height="12px" viewBox="0 0 42 42" version="1.1"
@@ -203,3 +203,4 @@
         </div>
 
     </aside>
+<?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>

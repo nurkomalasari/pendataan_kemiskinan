@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Helpers\ResponseFormatter;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Dotenv\Validator;
@@ -20,14 +21,21 @@ class LoginController extends Controller
         $user = User::where('email', $request->email)->first();
         if (!$user || !Hash::check($request->password, $user->password)) {
             $response = ["message" => 'Failed'];
+
             return response($response, 422);
         }
         $token = $user->createToken($request->email)->plainTextToken;
-        return response()->json(
+        return  ResponseFormatter::success(
             [
                 "token" => $token,
                 "user" => $user
             ]
         );
+        // return response()->json(
+        //     [
+        //         "token" => $token,
+        //         "user" => $user
+        //     ]
+        // );
     }
 }

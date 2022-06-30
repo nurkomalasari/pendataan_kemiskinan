@@ -11,7 +11,7 @@ class HasilSurvei extends Model
 
     protected $table = 'hasil_surveis';
     protected $fillable = [
-        'id_penduduk', 'id_opsi_jawaban', 'tanggal'
+        'id_penduduk', 'id_opsi_jawaban', 'tanggal', 'longitude', 'latitude'
     ];
 
 

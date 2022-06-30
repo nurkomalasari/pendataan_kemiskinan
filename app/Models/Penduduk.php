@@ -32,4 +32,13 @@ class Penduduk extends Model
     {
         return $this->hasMany(HasilSurvei::class, 'id_penduduk');
     }
+
+    public function hasilClustering()
+    {
+        return $this->hasMany(HasilClustering::class, 'id_penduduk');
+    }
+    public function clustering()
+    {
+        return $this->hasMany(Clustering::class, 'id_penduduk');
+    }
 }

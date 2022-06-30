@@ -44,4 +44,9 @@ class District extends Model
     {
         return $this->hasMany(District::class, 'district_id');
     }
+
+    public function hasilClustering()
+    {
+        return $this->hasMany(HasilClustering::class);
+    }
 }

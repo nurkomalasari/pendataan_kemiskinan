@@ -43,6 +43,6 @@ class HasilSurveyController extends Controller
                 404
             );
         }
-        return response()->json(['opsi jawaban created successfully.', ($hasil)]);
+        return response()->json(['Hasil survey created successfully.', ($hasil)]);
     }
 }

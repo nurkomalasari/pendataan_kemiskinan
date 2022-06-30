@@ -22,4 +22,9 @@ class OpsiJawaban extends Model
     {
         return $this->hasMany(HasilSurvei::class);
     }
+
+    public function clustering()
+    {
+        return $this->hasMany(Clustering::class);
+    }
 }

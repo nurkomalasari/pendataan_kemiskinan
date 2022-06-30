@@ -1,6 +1,5 @@
-@extends('layouts.main')
-@section('title', 'Data Hasil Survey')
-@section('content')
+<?php $__env->startSection('title', 'Data Hasil Survey'); ?>
+<?php $__env->startSection('content'); ?>
 
     <body>
         <div class="row">
@@ -51,14 +50,14 @@
 
 
                     function read() {
-                        $.get("{{ url('hasilSurvey/read') }}", {}, function(data, status) {
+                        $.get("<?php echo e(url('hasilSurvey/read')); ?>", {}, function(data, status) {
                             $('#read').html(data);
 
                         });
                     }
 
                     function create() {
-                        $.get("{{ url('hasilSurvey/create') }}", {}, function(data, status) {
+                        $.get("<?php echo e(url('hasilSurvey/create')); ?>", {}, function(data, status) {
                             $('#page').html(data);
                             $('#exampleModalLabel').html('Tambah Hasil Jawaban');
                             $('#exampleModal').modal('show');
@@ -84,7 +83,7 @@
 
                         $.ajax({
                             type: "get",
-                            url: "{{ url('hasilSurvey/store') }}",
+                            url: "<?php echo e(url('hasilSurvey/store')); ?>",
                             data: {
                                 id_penduduk: id_penduduk,
                                 id_opsi_jawaban: id_opsi_jawaban,
@@ -108,7 +107,7 @@
                     }
 
                     function show(id) {
-                        $.get("{{ url('hasilSurvey/show') }}/" + id, {}, function(data, status) {
+                        $.get("<?php echo e(url('hasilSurvey/show')); ?>/" + id, {}, function(data, status) {
                             $('#page').html(data);
                             $('#exampleModalLabel').html('Edite hasilSurvey');
                             $('#exampleModal').modal('show');
@@ -126,7 +125,7 @@
 
                         $.ajax({
                             type: "get",
-                            url: "{{ url('hasilSurvey/update') }}/" + id,
+                            url: "<?php echo e(url('hasilSurvey/update')); ?>/" + id,
                             data: {
                                 id_penduduk: id_penduduk,
                                 id_opsi_jawaban: id_opsi_jawaban,
@@ -153,7 +152,7 @@
 
                         $.ajax({
                             type: "get",
-                            url: "{{ url('hasilSurvey/destroy') }}/" + id,
+                            url: "<?php echo e(url('hasilSurvey/destroy')); ?>/" + id,
                             success: function(data) {
                                 // $("#page").html('');
                                 $(".btn-close").click();
@@ -166,4 +165,6 @@
 
                     }
                 </script>
-            @endsection
+            <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/hasilsurvey/index.blade.php ENDPATH**/ ?>
