@@ -49,4 +49,9 @@ class District extends Model
     {
         return $this->hasMany(HasilClustering::class);
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class, 'district_id');
+    }
 }

@@ -37,10 +37,11 @@
                         </td>
 
                         <td>
-                            <span class="text-xs font-weight-bold"><?php echo e($item->penduduk->nama); ?></span>
+                            <span
+                                class="text-xs font-weight-bold"><?php echo e($item->penduduk->nama ?? ''); ?></span>
                         </td>
                         <td>
-                            <span class="text-xs font-weight-bold"><?php echo e($item->penduduk->district->name); ?></span>
+                            <span class="text-xs font-weight-bold"><?php echo e($item->penduduk->district->name ?? ''); ?></span>
                         </td>
 
                         <td>

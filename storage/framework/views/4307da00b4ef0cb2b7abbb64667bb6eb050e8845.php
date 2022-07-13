@@ -1,77 +1,9 @@
-<?php $__env->startSection('title', 'Data Hasil Survey'); ?>
+<?php $__env->startSection('title', 'Data Hasil Clustering'); ?>
+<?php $__env->startSection('page', 'Data Hasil Clustering'); ?>
+
 <?php $__env->startSection('content'); ?>
 
     <body>
-        <h6>Hasil Silhoutte</h6>
-
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Cluster 1</p>
-                                <h5 class="font-weight-bolder mb-0">
-                                    Miskin
-                                    <span class="text-success text-sm font-weight-bolder">0.12612220410005048</span>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Cluster 2</p>
-                                <h5 class="font-weight-bolder mb-0">
-                                    Menengah
-                                    <span class="text-success text-sm font-weight-bolder">0.11669299306539814</span>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3">
-            <div class="card">
-                <div class="card-body p-3">
-                    <div class="row">
-                        <div class="col-8">
-                            <div class="numbers">
-                                <p class="text-sm mb-0 text-capitalize font-weight-bold">Cluster 3</p>
-                                <h5 class="font-weight-bolder mb-0">
-                                    Kaya
-                                    <span class="text-success text-sm font-weight-bolder">0.1250472409829619</span>
-                                </h5>
-                            </div>
-                        </div>
-                        <div class="col-4 text-end">
-                            <div class="icon icon-shape bg-gradient-primary shadow text-center border-radius-md">
-                                <i class="ni ni-world text-lg opacity-10" aria-hidden="true"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <br>
         <div class="row mt-3">
             <div class="col-12">
                 <div class="card mb-4">
@@ -107,6 +39,8 @@
                         </div>
                     </div>
                 </div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                >
                 <script>
                     $(document).ready(function() {
                         read()

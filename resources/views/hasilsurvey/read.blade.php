@@ -40,7 +40,8 @@
                         </td>
 
                         <td>
-                            <span class="text-xs font-weight-bold">{{ $item->penduduk->nama }}</span>
+                            <span
+                                class="text-xs font-weight-bold">{{ $item->penduduk->nama ?? '' }}</span>
                         </td>
                         <td>
                             <span class="text-xs font-weight-bold">{{ $item->penduduk->district->name ?? '' }}</span>

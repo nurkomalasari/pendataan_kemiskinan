@@ -96,7 +96,6 @@
         </table>
     </div>
 </div>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap4.min.css">
 
 <script>
     $(document).ready(function() {

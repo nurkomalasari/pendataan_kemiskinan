@@ -25,8 +25,9 @@
             var data = google.visualization.arrayToDataTable({{ Js::from($array) }});
 
             var options = {
-                title: 'My Daily Activities',
+                title: 'Data Kemiskinan',
                 is3D: true,
+                colors: ['#c90076', '#c27ba0', '#d5a6bd']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));

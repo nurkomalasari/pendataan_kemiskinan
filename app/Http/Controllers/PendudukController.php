@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\PendudukImport;
 use App\Models\District;
 use App\Models\Penduduk;
 use App\Models\Status;
 use App\Models\Village;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PendudukController extends Controller
 {
@@ -176,5 +178,11 @@ class PendudukController extends Controller
         foreach ($village as $item) {
             echo "<option value='$item->id'>$item->name</option>";
         }
+    }
+
+    public function importPenduduk(Request $request)
+    {
+        Excel::import(new PendudukImport(), $request->file('penduduk_import'));
+        return redirect('/penduduk/index');
     }
 }

@@ -9819,7 +9819,7 @@ fieldset:disabled .btn {
 }
 
 .text-info {
-  color: #17c1e8 !important;
+  color: #e817cc !important;
 }
 
 .text-warning {
@@ -23261,7 +23261,7 @@ p {
 }
 
 .text-gradient.text-info {
-  background-image: linear-gradient(310deg, #2152FF, #21D4FD);
+  background-image: linear-gradient(310deg, #ff21e1, #fd21f2);
 }
 
 .text-gradient.text-success {

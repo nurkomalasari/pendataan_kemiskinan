@@ -1,22 +1,24 @@
-
 <?php $__env->startSection('title', 'Data Penduduk'); ?>
+<?php $__env->startSection('page', 'Data Penduduk'); ?>
+
 <?php $__env->startSection('content'); ?>
 
     <body>
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="card-header pb-0">
-                        <h6>Data penduduk</h6>
+                    <div class="ml-3 mt-3">
                         <button class="btn btn-primary" type="button" onclick="create()">+ Tambah Data </button>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importExcel">
                             Import
                         </button>
                         <a class="btn btn-primary" href="/export"> export</a>
-                        <div id="read" class="mt-3">
 
-                        </div>
                     </div>
+                    <div id="read" class="mt-3">
+
+                    </div>
+
 
 
                     <!-- Button trigger modal -->
@@ -34,7 +36,15 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-
+                                    <form action="<?php echo e(url('/importPenduduk')); ?>" method="post"
+                                        enctype="multipart/form-data">
+                                        <?php echo csrf_field(); ?>
+                                        <input type="file" name="penduduk_import" class="form-control"
+                                            placeholder="Recipient's username" aria-label="Recipient's username"
+                                            aria-describedby="button-addon2">
+                                        <button class="btn btn-primary mt-3" type="submit"
+                                            id="button-addon2">Import</button>
+                                    </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

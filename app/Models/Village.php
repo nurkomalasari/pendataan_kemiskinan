@@ -40,4 +40,9 @@ class Village extends Model
     {
         return $this->hasMany(Surveyor::class, 'village_id');
     }
+
+    public function user()
+    {
+        return $this->hasMany(User::class, 'village_id');
+    }
 }
