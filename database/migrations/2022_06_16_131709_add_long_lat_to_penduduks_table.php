@@ -14,8 +14,9 @@ class AddLongLatToPenduduksTable extends Migration
     public function up()
     {
         Schema::table('penduduks', function (Blueprint $table) {
-            $table->string('longitude')->after('alamat_lengkap');
-            $table->string('latitude')->after('longitude');
+
+            $table->string('nik')->after('id');
+            $table->string('kks')->nullable()->after('nik');
         });
     }
 

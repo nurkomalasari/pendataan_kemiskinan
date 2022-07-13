@@ -27,6 +27,23 @@ class PendudukController extends Controller
         }
     }
 
+    public function pendudukById($id)
+    {
+        $data = Penduduk::findOrFail($id);
+        if ($data) {
+            return ResponseFormatter::success(
+                $data,
+                'Data Penduduk berdasarkan Berhasil ditampilkan'
+            );
+        } else {
+            return ResponseFormatter::error(
+                null,
+                'Data Tidak Ada',
+                404
+            );
+        }
+    }
+
     public function create(Request $request)
     {
 

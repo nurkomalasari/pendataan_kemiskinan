@@ -23,7 +23,7 @@ class PendudukSeeder extends Seeder
         // $district = District::all()->pluck('id');
         $district = District::where('regency_id', '3212')->pluck('id');
 
-        $village = Village::where('district_id', $district)->pluck('id');
+        $village = Village::where('district_id', 3212120)->pluck('id');
 
 
 
@@ -31,6 +31,8 @@ class PendudukSeeder extends Seeder
         $faker = Faker::create('id_ID');
         for ($i = 1; $i <= 100; $i++) {
             DB::table('penduduks')->insert([
+                'nik' => $faker->nik(),
+                'kks' => $faker->randomNumber($nbDigits = NULL, $strict = false),
                 'nama' => $faker->name,
                 'tanggal_lahir' => date('Y-m-d H:i:s'),
                 'jenis_kelamin' => $faker->randomElement($array = array('Laki - Laki', 'Perempuan')),
