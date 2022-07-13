@@ -26,6 +26,8 @@ Route::post('hasilSurvey/create', [HasilSurveyController::class, 'store']);
 Route::get('/pertanyaan', [PertanyaanController::class, 'index']);
 Route::get('/opsiJawaban', [OpsiJawabanController::class, 'index']);
 Route::get('/penduduk/{id}', [PendudukController::class, 'pendudukById']);
+Route::get('/penduduk', [PendudukController::class, 'index']);
+
 
 
 
