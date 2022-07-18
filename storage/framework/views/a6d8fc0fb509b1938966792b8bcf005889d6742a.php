@@ -19,6 +19,8 @@
         <select class="form-select" id="desa" name="desa" required>
             <option value="">Pilih Desa</option>
         </select>
+        <br>
+        <input type="file" name="image" id="image">
 
 
 

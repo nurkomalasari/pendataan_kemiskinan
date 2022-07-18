@@ -27,14 +27,13 @@ class UserController extends Controller
 
     public function createUser(Request $request)
     {
-        $this->validate($request, [
-
+        $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'password' => 'required|string|min:8',
             'kecamatan' => 'required',
             'desa' => 'required',
-
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $user = array(
@@ -42,9 +41,17 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request['password']),
             'kecamatan' => $request->kecamatan,
-            'desa' => $request->desa
+            'desa' => $request->desa,
+            'image' => $request->image
 
         );
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        }
+
 
         User::insert($user);
     }
@@ -58,8 +65,16 @@ class UserController extends Controller
         $data->password  = Hash::make($request['password']);
         $data->kecamatan = $request->kecamatan;
         $data->desa      = $request->desa;
+        $data->image      = $request->image;
 
-
+        if ($image = $request->file('image')) {
+            $destinationPath = 'image/';
+            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destinationPath, $profileImage);
+            $input['image'] = "$profileImage";
+        } else {
+            unset($input['image']);
+        }
 
         $data->save();
     }

@@ -19,6 +19,8 @@ use App\Http\Controllers\UserController;
 // use App\Http\Controllers\SurveyorController;
 
 use App\Http\Controllers\VillageController;
+use App\Http\Controllers\WelcomeController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,12 +102,15 @@ Route::get('/clustering/read', [ClusteringController::class, 'getDataTampil']);
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('landing-page');
+
+Route::get('/', [WelcomeController::class, 'welcome'])->name('landing-page');
 
 
-Route::get('/coba', function () {
-    return view('cobalogin');
-});
+
+// Route::get('/coba', function () {
+//     return view('cobalogin');
+// });
 
 
 // Auth::routes();
@@ -194,4 +199,4 @@ Route::get('/item_data_cluster_dua', [HasilClusteringController::class, 'cluster
 Route::get('/item_data_cluster_tiga', [HasilClusteringController::class, 'clusterTiga']);
 Route::get('/groupCluster/echart', [HasilClusteringController::class, 'echart']);
 
-Route::get('/KecamatanHaurgelis', [HasilClusteringController::class, 'clusterPerKecamatan']);
+Route::get('/kemiskinan_kecamatan', [HasilClusteringController::class, 'clusterPerKecamatan']);

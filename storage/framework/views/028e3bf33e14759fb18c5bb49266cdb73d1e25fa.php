@@ -5,6 +5,10 @@
                 <tr>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">No
                     </th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NIK
+                    </th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">KKS
+                    </th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                         Nama</th>
                     <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
@@ -48,7 +52,12 @@
                                 </div>
                             </div>
                         </td>
-
+                        <td>
+                            <span class="text-xs font-weight-bold"><?php echo e($item->nik); ?></span>
+                        </td>
+                        <td>
+                            <span class="text-xs font-weight-bold"><?php echo e($item->kks); ?></span>
+                        </td>
                         <td>
                             <span class="text-xs font-weight-bold"><?php echo e($item->nama); ?></span>
                         </td>

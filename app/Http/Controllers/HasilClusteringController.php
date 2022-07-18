@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use App\Models\HasilClustering;
 use App\Models\HasilSurvei;
 use App\Models\Penduduk;
@@ -109,11 +110,17 @@ class HasilClusteringController extends Controller
         return view('hasilClustering.item_data_tidak_miskin', compact('data'));
     }
 
-    public function clusterPerKecamatan()
+    public function clusterPerKecamatan(Request $request)
     {
 
+        $districts = District::where('regency_id', '3212')->get();
+        // return view('hasilClustering.dashbboard_clustering', compact('districts'));
+
         //kec Haurgelis
-        $data = Penduduk::where('district_id', 3212010)->with(['hasilClustering'])->get();
+        $data = Penduduk::where('district_id', $request->district_id)->has('hasilClustering')->get();
+
+
+        return view('hasilClustering.kemiskinan_perkecamatan', compact('data'));
         // // kec. gantar
         // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212011)->get();
         // // Kec. Kroya
@@ -126,9 +133,36 @@ class HasilClusteringController extends Controller
         // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212041)->get();
         // // kec. Lelea
         // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212050)->get();
-
-
-
+        // // kec. bangodua
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212060)->get();
+        // // kec. TUKDANA
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212061)->get();
+        // // kec. widasari
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212070)->get();
+        // // kec. Kertasemaya
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212080)->get();
+        // // kec. SUKAGUMIWANG
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212081)->get();
+        // // kec. Kerangkeng
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212090)->get();
+        // // kec. karangampel
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212100)->get();
+        // // kec. kedokanbunder
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212101)->get();
+        // // kec. juntinyuat
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212110)->get();
+        // // kec. sliyeng
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212120)->get();
+        // // kec. jatibarang
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212130)->get();
+        // // kec. balongan
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212140)->get();
+        // // kec. indramayu
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212150)->get();
+        // // kec. sindang
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212160)->get();
+        // // kec. cantigi
+        // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212150)->get();
 
         // $data = Penduduk::with(['hasilClustering'])->where('district_id', 3212011)->get();
 
@@ -139,6 +173,6 @@ class HasilClusteringController extends Controller
         //     ->select('district_id', DB::raw('count(*) as total'))->select('nama')
         //     ->groupBy('district_id')
         //     ->get();
-        dd($data);
+        // dd($data);
     }
 }

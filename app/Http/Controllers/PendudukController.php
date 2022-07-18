@@ -57,6 +57,8 @@ class PendudukController extends Controller
     {
         //
         $this->validate($request, [
+            'nik' => 'required',
+            'kks' => 'required',
             'nama' => 'required',
             'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
@@ -74,6 +76,8 @@ class PendudukController extends Controller
 
         ]);
         $data = array(
+            'nik'    =>  $request->nik,
+            'kks'    =>  $request->kks,
             'nama'    =>  $request->nama,
             'tanggal_lahir'     =>  $request->tanggal_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
@@ -143,6 +147,8 @@ class PendudukController extends Controller
     public function update(Request $request, $id)
     {
         $data = Penduduk::findOrFail($id);
+        $data->nik = $request->nik;
+        $data->kks = $request->kks;
         $data->nama = $request->nama;
         $data->tanggal_lahir = $request->tanggal_lahir;
         $data->jenis_kelamin = $request->jenis_kelamin;

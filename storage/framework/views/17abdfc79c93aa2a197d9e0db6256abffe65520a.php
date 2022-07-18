@@ -7,8 +7,8 @@
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="ml-3 mt-3">
-                        <button class="btn btn-primary" type="button" onclick="create()">+ Tambah Data </button>
+                    <div class="ml-3 mr-3 mt-3">
+                        <button class="btn btn-primary mr-3" type="button" onclick="create()">+ Tambah Data </button>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importExcel">
                             Import
                         </button>
@@ -96,6 +96,8 @@
                     }
 
                     function store() {
+                        var nik = $("#nik").val();
+                        var kks = $("#kks").val();
                         var nama = $("#nama").val();
                         var tanggal_lahir = $("#tanggal_lahir").val();
                         var jenis_kelamin = $("#jenis_kelamin").val();
@@ -116,6 +118,8 @@
                             type: "get",
                             url: "<?php echo e(url('penduduk/store')); ?>",
                             data: {
+                                nik: nik,
+                                kks: kks,
                                 nama: nama,
                                 tanggal_lahir: tanggal_lahir,
                                 jenis_kelamin: jenis_kelamin,
@@ -154,6 +158,8 @@
                     }
 
                     function edit(id) {
+                        var nik = $("#nik").val();
+                        var kks = $("#kks").val();
                         var nama = $("#nama").val();
                         var tanggal_lahir = $("#tanggal_lahir").val();
                         var jenis_kelamin = $("#jenis_kelamin").val();
@@ -173,6 +179,8 @@
                             type: "get",
                             url: "<?php echo e(url('penduduk/update')); ?>/" + id,
                             data: {
+                                nik: nik,
+                                kks: kks,
                                 nama: nama,
                                 tanggal_lahir: tanggal_lahir,
                                 jenis_kelamin: jenis_kelamin,
@@ -185,6 +193,7 @@
                                 alamat_lengkap: alamat_lengkap,
                                 longitude: longitude,
                                 latitude: latitude,
+
                             },
 
                             success: function(data) {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -30,6 +31,8 @@ class HomeController extends Controller
 
     public function adminHome()
     {
+        $districts = District::where('regency_id', '3212')->get();
+
         $data = DB::table('hasil_clustering')
             ->select(
                 DB::raw('cluster as cluster'),
@@ -52,6 +55,6 @@ class HomeController extends Controller
         }
         $clustering = Http::get('http://127.0.0.1:5000/silhoutte');
         $data = $clustering->json();
-        return view('hasilClustering.dashbboard_clustering', compact('data', 'array'));
+        return view('hasilClustering.dashbboard_clustering', compact('data', 'array', 'districts'));
     }
 }

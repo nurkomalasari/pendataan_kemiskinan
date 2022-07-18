@@ -1,10 +1,11 @@
 <div class="card">
-    <div class="card-body px-0 pt-0 pb-2" id="table-miskin">
+    <div class="card-body px-0 pt-0 pb-2" id="table-menengah">
         <div class="table-responsive p-0">
             <table id="table_id_cluster" class="table">
-                <thead><br>
+                <thead>
                     <tr>
                         <h4><b> Data Masyarakat Miskin Tingkat Kecamatan</b></h4>
+
                     </tr>
                     <br>
                     <tr>
@@ -27,31 +28,36 @@
                 <?php $no = 1; ?>
 
                 <tbody>
-                    <?php $__currentLoopData = $data; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    @foreach ($data as $item)
                         <tr>
                             <td>
                                 <div class="d-flex px-2">
                                     <div class="my-auto">
-                                        <h6 class="mb-0 text-sm"><?php echo e($no++); ?></h6>
+                                        <h6 class="mb-0 text-sm">{{ $no++ }}</h6>
                                     </div>
                                 </div>
                             </td>
 
                             <td>
-                                <span class="text-xs font-weight-bold"><?php echo e($item->penduduk->nama ?? ''); ?></span>
+                                <span class="text-xs font-weight-bold">{{ $item->nama ?? '' }}</span>
                             </td>
                             <td>
-                                <span
-                                    class="text-xs font-weight-bold"><?php echo e($item->penduduk->district->name ?? ''); ?></span>
+                                <span class="text-xs font-weight-bold">{{ $item->district->name ?? '' }}</span>
                             </td>
 
 
                             <td>
-                                <span class="text-xs font-weight-bold"><?php echo e($item->clusterName->cluster_name); ?></span>
+                                @foreach ($item->hasilClustering as $item)
+                                    <span
+                                        class="text-xs font-weight-bold">{{ $item->clusterName->cluster_name }}</span>
+                                @endforeach
                             </td>
-                            
+                            {{-- <td class="align-middle">
+                            <button class="btn btn-warning" onclick="show({{ $item->id }})">Edit</button>
+                            <button class="btn btn-danger" onclick="destroy({{ $item->id }})">Delete</button>
+                        </td> --}}
                         </tr>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -63,4 +69,3 @@
     </script>
 
 </div>
-<?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/hasilClustering/item_data_miskin.blade.php ENDPATH**/ ?>

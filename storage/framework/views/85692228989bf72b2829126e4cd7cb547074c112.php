@@ -94,11 +94,7 @@
                         var password = $("#password").val();
                         var kecamatan = $("#kecamatan").val();
                         var desa = $("#desa").val();
-
-
-
-
-
+                        var image = $("#image").val();
 
                         $.ajax({
                             type: "get",
@@ -109,7 +105,7 @@
                                 password: password,
                                 kecamatan: kecamatan,
                                 desa: desa,
-
+                                image: image,
                             },
 
                             success: function(data) {
@@ -118,8 +114,6 @@
                                 read()
                             }
                         });
-
-
                     }
 
                     function show(id) {
@@ -129,7 +123,6 @@
                             $('#exampleModal').modal('show');
 
                         });
-
                     }
 
                     function edit(id) {
@@ -138,6 +131,7 @@
                         var password = $("#password").val();
                         var kecamatan = $("#kecamatan").val();
                         var desa = $("#desa").val();
+                        var image = $("#image").val();
                         $.ajax({
                             type: "get",
                             url: "<?php echo e(url('pengguna/update')); ?>/" + id,
@@ -147,7 +141,7 @@
                                 password: password,
                                 kecamatan: kecamatan,
                                 desa: desa,
-
+                                image: image,
                             },
 
                             success: function(data) {

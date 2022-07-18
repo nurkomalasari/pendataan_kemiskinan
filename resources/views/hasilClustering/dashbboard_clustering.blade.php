@@ -81,7 +81,22 @@
 
         </div>
 
+        <div>
+            <select class="form-select" id="district_id" name="district_id" required>
+                <option value="">Pilih Kecamatan</option>
+
+                @foreach ($districts as $district)
+                    <option value="{{ $district->id }}">{{ $district->name }}</option>
+                @endforeach
+
+            </select><br>
+        </div>
+
         <div class="table_id mt-3">
+
+        </div>
+
+        <div class="table_kecamatan mt-3">
 
         </div>
 
@@ -134,10 +149,6 @@
                     }
                 </script>
                 <script>
-                    ;
-
-
-
                     function read() {
                         $.get("{{ url('/hasilClustering/read') }}", {}, function(data, status) {
                             $('#read').html(data);
@@ -174,6 +185,46 @@
                         $.get("{{ url('/item_data_cluster_tiga') }}", {}, function(data, status) {
                             $('.table_id').html(data)
                         });
+
+                    });
+
+                    $('select[name="district_id"]').on('change', function() {
+                        let id = $(this).val();
+                        // alert(id);
+
+                        // $("#table-miskin").slideUp("fast");
+                        // $("#table-menengah").slideUp("fast");
+                        if (id) {
+
+                            // $.get("{{ url('/kemiskinan_kecamatan?district_id=') }}".id, {}, function(data, status) {
+                            //     $('.table_kecamatan').html(data)
+                            // });
+
+
+                            $.ajax({
+                                url: '/kemiskinan_kecamatan?district_id=' + id,
+                                method: "GET",
+                                success: function(data) {
+                                    $('.table_kecamatan').html(data)
+                                }
+
+
+                            });
+
+                            // $('table_kecamatan').DataTable({
+                            //     ajax: {
+                            //         url: "/kemiskinan_kecamatan?district_id=" + id,
+                            //         type: "GET",
+                            //         dataSrc: ""
+                            //     },
+                            //     columns: [
+                            //         {data: id},
+                            //         {data: nama},
+                            //     ]
+                            // })
+                        }
+
+
 
                     });
                 </script>

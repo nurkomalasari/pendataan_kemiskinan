@@ -3,6 +3,9 @@
     <div class="form-group">
 
         {{-- <input type="text" name="id_alamat" placeholder="Alamat" id="alamat" class="form-control"><br> --}}
+        <input type="text" name="nik" placeholder="Nomor Induk Kependudukan" id="nik" class="form-control"><br>
+        <input type="text" name="kks" placeholder="Kartu Keluarga Sejahtera" id="kks"
+            class="form-control"><br>
         <input type="text" name="nama" placeholder="Nama" id="nama" class="form-control"><br>
         <input type="date" name="tanggal_lahir" placeholder="Tanggal lahir" id="tanggal_lahir"
             class="form-control"><br>
@@ -45,8 +48,9 @@
         </select>
         <label for="exampleFormControlTextarea1" class="form-label">Alamat Lengkap</label>
         <textarea class="form-control" id="alamat_lengkap" rows="3"></textarea>
-        <input type="text" name="longitude" placeholder="Pekerjaan" id="longitude" class="form-control"><br>
-        <input type="text" name="latitude" placeholder="Pekerjaan" id="latitude" class="form-control"><br>
+        <br>
+        <input type="text" name="longitude" placeholder="Longitude" id="longitude" class="form-control"><br>
+        <input type="text" name="latitude" placeholder="Latitude" id="latitude" class="form-control"><br>
 
 
 

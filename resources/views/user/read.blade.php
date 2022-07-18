@@ -17,6 +17,11 @@
                         <th
                             class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                             Desa</th>
+                        <th
+                            class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
+                            image</th>
+
+
 
                         <th
                             class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
@@ -55,6 +60,11 @@
                             </td>
                             <td>
                                 <span class="text-xs font-weight-bold">{{ $item->village->name ?? '' }}</span>
+                            </td>
+                            <td>
+
+                                <span class="text-xs font-weight-bold"><img src="/image/{{ $item->image }}"
+                                        width="100px"></span>
                             </td>
                             <td class="align-middle">
                                 <button class="btn btn-warning" onclick="show({{ $item->id }})">Edit</button>

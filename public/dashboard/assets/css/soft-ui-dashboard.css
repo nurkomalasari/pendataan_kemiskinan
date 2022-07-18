@@ -4861,7 +4861,7 @@ fieldset:disabled .btn {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  color: #cb0c9f;
+  color: #eb05b5;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
 }
 
@@ -4909,8 +4909,8 @@ fieldset:disabled .btn {
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
-  background-color: #fff;
-  border-color: #dee2e6 #dee2e6 #fff;
+  background-color: rgb(211, 7, 177);
+  border-color: #d300a5 #d300a5 #d300a5;
 }
 
 .nav-tabs .dropdown-menu {
@@ -21510,8 +21510,8 @@ hr.horizontal.gray-light {
   background-image: linear-gradient(310deg, #344767 0%, #344767 100%);
 }
 
-.sidenav[data-color="white"] .navbar-nav>.nav-item>.nav-link.active .icon {
-  background-image: linear-gradient(310deg, #fff 0%, #fff 100%);
+.sidenav[data-color="purple"] .navbar-nav>.nav-item>.nav-link.active .icon {
+  background-image: linear-gradient(310deg, rgb(230, 0, 191) 0%, rgb(224, 0, 168) 100%);
 }
 
 .main-content,
@@ -21620,7 +21620,7 @@ hr.horizontal.gray-light {
 
 .navbar-vertical .navbar-nav>.nav-item .nav-link.active {
   color: #344767;
-  background-color: #fff;
+  background-color: rgb(250, 173, 237);
 }
 
 .navbar-vertical .navbar-nav>.nav-item .nav-link.active .icon {

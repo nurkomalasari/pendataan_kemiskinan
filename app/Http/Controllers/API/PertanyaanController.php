@@ -11,7 +11,7 @@ class PertanyaanController extends Controller
 {
     public function index()
     {
-        $pertanyaan = Pertanyaan::get();
+        $pertanyaan = Pertanyaan::with(['opsiJawaban'])->get();
         if ($pertanyaan) {
             return ResponseFormatter::success(
                 $pertanyaan,
