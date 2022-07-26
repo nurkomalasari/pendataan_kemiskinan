@@ -9,11 +9,9 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Data Hasil Clustering</h6>
-                        <a href="/newClustering" type="button" class="btn btn-primary">+ Tambah
-                            Data clustering</a>
+
                         {{-- <button class="btn btn-primary" type="button" onclick="create()">+ Tambah Data clustering </button> --}}
-                        <div id="read" class="mt-3">
+                        <div id="read">
 
                         </div>
                     </div>

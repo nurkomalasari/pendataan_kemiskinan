@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Data Hasil Survey')
+@section('page', 'Data Hasil Survey')
 @section('content')
 
     <body>
@@ -7,9 +8,13 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Data Hasil Survey</h6>
-                        <button class="btn btn-primary" type="button" onclick="create()">+ Tambah
+                        <button class="btn btn-secondary" type="button" onclick="create()">+ Tambah
                             Data </button>
+                        <a href="/newClustering" type="button" class="btn btn-primary"><i class="fas fa-layer-group"></i>
+                            Proses Clustering</a>
+                        <a class="btn btn-success" href="/export-hasilSurvey"><i class="fas fa-file-download"></i>
+                            export</a>
+
                         <div id="read" class="mt-3">
 
                         </div>

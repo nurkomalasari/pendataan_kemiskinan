@@ -359,7 +359,7 @@ textarea {
 
 button,
 select {
-  text-transform: none;
+  text-transform: lowercase;
 }
 
 [role="button"] {
@@ -2514,15 +2514,15 @@ progress {
 }
 
 .table-secondary {
-  --bs-table-bg: #e6e9ee;
-  --bs-table-striped-bg: #dbdde2;
+  --bs-table-bg: #e9ecef;
+  --bs-table-striped-bg: #e9ecef;
   --bs-table-striped-color: #000;
-  --bs-table-active-bg: #cfd2d6;
-  --bs-table-active-color: #000;
-  --bs-table-hover-bg: #d5d8dc;
+  --bs-table-active-bg: #e9ecef;
+  --bs-table-active-color: rgb(255, 255, 255);
+  --bs-table-hover-bg: #e9ecef;
   --bs-table-hover-color: #000;
   color: #000;
-  border-color: #cfd2d6;
+  border-color: #e9ecef;
 }
 
 .table-success {
@@ -5353,7 +5353,7 @@ fieldset:disabled .btn {
   flex-direction: column;
   min-width: 0;
   word-wrap: break-word;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(214, 209, 209);
   background-clip: border-box;
   border: 0 solid rgba(0, 0, 0, 0.125);
   border-radius: 1rem;
@@ -24924,6 +24924,29 @@ pre[class*="language-"] {
   .ps {
     overflow: auto !important;
   }
+}
+
+
+h5.font-white{
+ color: #ffffff;
+}
+h6.font-white{
+ color: #ffffff;
+}
+
+
+.card-purple1{
+    background-color: #c90076;
+
+}
+
+.card-purple2{
+    background-color: #c27ba0;
+
+}
+.card-purple3{
+    background-color: #d5a6bd;
+
 }
 
 /*# sourceMappingURL=dashboard-free.css.map */

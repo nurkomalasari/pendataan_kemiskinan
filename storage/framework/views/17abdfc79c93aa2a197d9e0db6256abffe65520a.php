@@ -1,24 +1,22 @@
 <?php $__env->startSection('title', 'Data Penduduk'); ?>
 <?php $__env->startSection('page', 'Data Penduduk'); ?>
-
 <?php $__env->startSection('content'); ?>
 
     <body>
         <div class="row">
             <div class="col-12">
                 <div class="card mb-4">
-                    <div class="ml-3 mr-3 mt-3">
-                        <button class="btn btn-primary mr-3" type="button" onclick="create()">+ Tambah Data </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importExcel">
-                            Import
+                    <div class="card-header pb-0">
+
+                        <button class="btn btn-secondary" type="button" onclick="create()">+ Tambah Data </button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#importExcel">
+                            <i class="fas fa-file-import"></i> Import
                         </button>
-                        <a class="btn btn-primary" href="/export"> export</a>
+                        <a class="btn btn-success" href="/export"><i class="fas fa-file-download"></i> export</a>
+                        <div id="read">
 
+                        </div>
                     </div>
-                    <div id="read" class="mt-3">
-
-                    </div>
-
 
 
                     <!-- Button trigger modal -->
@@ -54,6 +52,7 @@
                         </div>
                     </div>
 
+                    <!-- Modal Untuk crud-->
                     <!-- Modal Untuk crud-->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
@@ -227,9 +226,5 @@
                     }
                 </script>
             <?php $__env->stopSection(); ?>
-
-
-
-            
 
 <?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/penduduk/index.blade.php ENDPATH**/ ?>

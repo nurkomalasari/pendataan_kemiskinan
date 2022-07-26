@@ -5,8 +5,7 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
                 target="_blank">
-                <img src="{{ asset('dashboard') }}/assets/img/logo1.png" class="navbar-brand-img h-100"
-                    alt="main_logo">
+                <img src="{{ asset('dashboard') }}/assets/img/logo1.png" class="navbar-brand-img h-100" alt="main_logo">
             </a>
         </div>
 
@@ -24,34 +23,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('hasilClustering') ? 'active' : '' }}"
-                        href="{{ url('hasilClustering') }}">
-                        <i class="fas fa-table"></i>
-                        <span class="nav-link-text ms-1">Hasil Clustering<br> Kemiskinan</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class=" nav-link {{ request()->is('pertanyaan/index') ? ' active' : '' }}"
-                        href="
-                    {{ url('pertanyaan/index') }}">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-link-text ms-1">Pertanyaan Survey</span>
-
-                    </a>
-                </li>
-                {{-- <li class="nav-item">
-                    <a class="nav-link{{ request()->is('status/index') ? ' active' : '' }}"
-                        href="{{ url('status/index') }}">
-
-                        <span class="nav-link-text ms-1">Status</span>
-                    </a>
-                </li> --}}
-
-                <li class="nav-item">
                     <a class="nav-link {{ request()->is('penduduk/index') ? ' active' : '' }}"
                         href="{{ url('penduduk/index') }}">
                         <i class="fas fa-users"></i>
                         <span class="nav-link-text ms-1">Data Penduduk</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class=" nav-link {{ request()->is('opsiJawaban/index') ? ' active' : '' }}"
+                        href="
+                    {{ url('opsiJawaban/index') }}">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nav-link-text ms-1">Pertanyaan Survey</span>
+
                     </a>
                 </li>
                 <li class="nav-item">
@@ -61,6 +45,24 @@
                         <span class="nav-link-text ms-1">Hasil Survey</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ request()->is('hasilClustering') ? 'active' : '' }}"
+                        href="{{ url('hasilClustering') }}">
+                        <i class="fas fa-table"></i>
+                        <span class="nav-link-text ms-1">Hasil Clustering<br> Kemiskinan</span>
+                    </a>
+                </li>
+
+                {{-- <li class="nav-item">
+                    <a class="nav-link{{ request()->is('status/index') ? ' active' : '' }}"
+                        href="{{ url('status/index') }}">
+
+                        <span class="nav-link-text ms-1">Status</span>
+                    </a>
+                </li> --}}
+
+
+
                 <li class="nav-item">
                     <a class="nav-link {{ request()->is('pengguna/index') ? ' active' : '' }} "
                         href="{{ url('pengguna/index') }}">

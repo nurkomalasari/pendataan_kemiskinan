@@ -29,6 +29,8 @@ class HasilSurveyController extends Controller
 
         ]);
         $isi = explode(",", $request->id_opsi_jawaban);
+        $id_penduduk = $request->id_penduduk;
+        Penduduk::where('id', $id_penduduk)->update(array('status_survey' => 'Sudah disurvey'));
         DB::insert('insert into clustering ( X1, X2, X3, X4, X5, X6, X7, X8, X9, X10, X11, X12, X13, X14) values ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', [$isi[0], $isi[1], $isi[2], $isi[3], $isi[4], $isi[5], $isi[6], $isi[7], $isi[8], $isi[9], $isi[10], $isi[11], $isi[12], $isi[13]]);
 
         if ($hasil) {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\PendudukExport;
 use App\Imports\PendudukImport;
 use App\Models\District;
 use App\Models\Penduduk;
@@ -191,5 +192,10 @@ class PendudukController extends Controller
     {
         Excel::import(new PendudukImport(), $request->file('penduduk_import'));
         return redirect('/penduduk/index');
+    }
+
+    public function export()
+    {
+        return Excel::download(new PendudukExport, 'Penduduks.xlsx');
     }
 }

@@ -17,8 +17,8 @@ class CreatePenduduksTable extends Migration
             $table->id();
             $table->string('nama');
             $table->string('tanggal_lahir');
-            $table->string('jenis_kelamin');
-            $table->string('agama');
+            $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
+            $table->enum('agama', ['ISLAM', 'BUDHA', 'KHATOLIK', 'KRISTEN', 'HINDU', 'KHONGHUCU']);
             $table->foreignId('id_status');
             $table->string('pekerjaan');
             $table->foreignId('district');

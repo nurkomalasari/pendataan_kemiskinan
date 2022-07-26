@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\District;
+use App\Models\HasilSurvei;
+use App\Models\Penduduk;
+use App\Models\Pertanyaan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -55,6 +58,15 @@ class HomeController extends Controller
         }
         $clustering = Http::get('http://127.0.0.1:5000/silhoutte');
         $data = $clustering->json();
-        return view('hasilClustering.dashbboard_clustering', compact('data', 'array', 'districts'));
+
+
+        $maps = Penduduk::with(['hasilClustering'])->has('hasilClustering')->get();
+        $total_penduduk = Penduduk::all()->count();
+        $total_hasil = HasilSurvei::all()->count();
+        $total_Pertanyaan = Pertanyaan::all()->count();
+
+
+        // dd($maps);
+        return view('hasilClustering.dashbboard_clustering', compact('data', 'array', 'districts', 'maps', 'total_penduduk', 'total_hasil', 'total_Pertanyaan'));
     }
 }

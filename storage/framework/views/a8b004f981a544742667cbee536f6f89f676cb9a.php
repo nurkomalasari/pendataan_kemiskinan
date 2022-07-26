@@ -5,8 +5,7 @@
                 aria-hidden="true" id="iconSidenav"></i>
             <a class="navbar-brand m-0" href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html"
                 target="_blank">
-                <img src="<?php echo e(asset('dashboard')); ?>/assets/img/logo1.png" class="navbar-brand-img h-100"
-                    alt="main_logo">
+                <img src="<?php echo e(asset('dashboard')); ?>/assets/img/logo1.png" class="navbar-brand-img h-100" alt="main_logo">
             </a>
         </div>
 
@@ -22,28 +21,19 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link <?php echo e(request()->is('hasilClustering') ? 'active' : ''); ?>"
-                        href="<?php echo e(url('hasilClustering')); ?>">
-                        <i class="fas fa-table"></i>
-                        <span class="nav-link-text ms-1">Hasil Clustering<br> Kemiskinan</span>
-                    </a>
-                </li>
-                <li class="nav-item ">
-                    <a class=" nav-link <?php echo e(request()->is('pertanyaan/index') ? ' active' : ''); ?>"
-                        href="
-                    <?php echo e(url('pertanyaan/index')); ?>">
-                        <i class="fas fa-question-circle"></i>
-                        <span class="nav-link-text ms-1">Pertanyaan Survey</span>
-
-                    </a>
-                </li>
-                
-
-                <li class="nav-item">
                     <a class="nav-link <?php echo e(request()->is('penduduk/index') ? ' active' : ''); ?>"
                         href="<?php echo e(url('penduduk/index')); ?>">
                         <i class="fas fa-users"></i>
                         <span class="nav-link-text ms-1">Data Penduduk</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class=" nav-link <?php echo e(request()->is('opsiJawaban/index') ? ' active' : ''); ?>"
+                        href="
+                    <?php echo e(url('opsiJawaban/index')); ?>">
+                        <i class="fas fa-question-circle"></i>
+                        <span class="nav-link-text ms-1">Pertanyaan Survey</span>
+
                     </a>
                 </li>
                 <li class="nav-item">
@@ -53,6 +43,18 @@
                         <span class="nav-link-text ms-1">Hasil Survey</span>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo e(request()->is('hasilClustering') ? 'active' : ''); ?>"
+                        href="<?php echo e(url('hasilClustering')); ?>">
+                        <i class="fas fa-table"></i>
+                        <span class="nav-link-text ms-1">Hasil Clustering<br> Kemiskinan</span>
+                    </a>
+                </li>
+
+                
+
+
+
                 <li class="nav-item">
                     <a class="nav-link <?php echo e(request()->is('pengguna/index') ? ' active' : ''); ?> "
                         href="<?php echo e(url('pengguna/index')); ?>">

@@ -128,6 +128,8 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
     Route::get('/hasilClustering', [HasilClusteringController::class, 'hasil_clustering']);
     Route::get('/hasilClustering/read', [HasilClusteringController::class, 'read']);
     Route::get('/newClustering', [HasilClusteringController::class, 'getHasilClustering']);
+    Route::get('/maps', [HasilClusteringController::class, 'mapsClustering']);
+
 
     Route::get('/chart', [HasilClusteringController::class, 'chart']);
     Route::get('pertanyaan/index', [PertanyaanController::class, 'index']);
@@ -154,6 +156,8 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
     Route::get('hasilSurvey/show/{id}', [HasilSurveyController::class, 'show']);
     Route::get('hasilSurvey/update/{id}', [HasilSurveyController::class, 'update']);
     Route::get('hasilSurvey/destroy/{id}', [HasilSurveyController::class, 'destroy']);
+    Route::get('/export-hasilSurvey', [HasilSurveyController::class, 'export'])->name('hasil.export');
+
     //Crud Status
     Route::get('status/index', [StatusController::class, 'index']);
     Route::get('status/read', [StatusController::class, 'read']);
@@ -182,7 +186,7 @@ Route::group(['middleware' => 'checkRole:admin'], function () {
     Route::get('penduduk/show/{id}', [PendudukController::class, 'show']);
     Route::get('penduduk/update/{id}', [PendudukController::class, 'update']);
     Route::get('penduduk/destroy/{id}', [PendudukController::class, 'destroy']);
-    Route::get('/export', [PendudukController::class, 'export']);
+    Route::get('/export', [PendudukController::class, 'export'])->name('penduduk.export');
     Route::post('/importPenduduk', [PendudukController::class, 'importPenduduk'])->name('import_penduduk');
     // Route::get('/export-users', [UserController::class, 'exportUsers'])->name('export-users');
     Route::get('/getDatadesa', [PendudukController::class, 'getdesa'])->name('getdesa');

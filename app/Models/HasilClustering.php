@@ -16,6 +16,10 @@ class HasilClustering extends Model
     {
         return $this->belongsTo(District::class);
     }
+    public function opsiJawaban()
+    {
+        return $this->hasMany(OpsiJawaban::class, 'id_pertanyaan');
+    }
     public function penduduk()
     {
         return $this->belongsTo(Penduduk::class, 'id_penduduk');

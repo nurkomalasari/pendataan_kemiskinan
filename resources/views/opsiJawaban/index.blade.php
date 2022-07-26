@@ -1,5 +1,6 @@
 @extends('layouts.main')
 @section('title', 'Data Opsi Jawaban')
+@section('page', 'Data Opsi Jawaban')
 @section('content')
 
     <body>
@@ -7,13 +8,9 @@
             <div class="col-12">
                 <div class="card mb-4">
                     <div class="card-header pb-0">
-                        <h6>Data Opsi Jawaban</h6>
-                        <button class="btn btn-primary" type="button" onclick="create()">+ Tambah Data </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#importExcel">
-                            Import
-                        </button>
-                        <a class="btn btn-primary" href="/export"> export</a>
-                        <div id="read" class="mt-3">
+
+                        <button class="btn btn-secondary" type="button" onclick="create()">+ Tambah Data </button>
+                        <div id="read">
 
                         </div>
                     </div>

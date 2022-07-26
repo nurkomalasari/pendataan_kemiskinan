@@ -110,6 +110,8 @@ class HasilClusteringController extends Controller
         return view('hasilClustering.item_data_tidak_miskin', compact('data'));
     }
 
+
+
     public function clusterPerKecamatan(Request $request)
     {
 

@@ -19,7 +19,7 @@
             class="form-control" value="{{ $data->pilihan_jawaban }}"><br>
 
         <input type="number" name="poin_jawaban" placeholder="Poin Opsi Jawaban" id="poin_jawaban" class="form-control"
-            value="{{ $data->pilihan_jawaban }}"><br>
+            value="{{ $data->poin_jawaban }}"><br>
 
 
 

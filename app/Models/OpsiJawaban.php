@@ -27,4 +27,9 @@ class OpsiJawaban extends Model
     {
         return $this->hasMany(Clustering::class);
     }
+
+    public function hasilClustering()
+    {
+        return $this->hasMany(HasilClustering::class, 'id_penduduk');
+    }
 }
