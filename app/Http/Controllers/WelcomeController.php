@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penduduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -29,8 +30,10 @@ class WelcomeController extends Controller
             }
             $array[++$key] = [$x, $value->number];
         }
+        $maps = Penduduk::with(['hasilClustering'])->has('hasilClustering')->get();
+
 
         // dd($array);
-        return view('welcome', compact('array'));
+        return view('welcome', compact('array', 'maps'));
     }
 }

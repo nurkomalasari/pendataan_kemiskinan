@@ -33,7 +33,7 @@ class UserController extends Controller
             'password' => 'required|string|min:8',
             'kecamatan' => 'required',
             'desa' => 'required',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+            // 'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
         ]);
 
         $user = array(
@@ -42,15 +42,15 @@ class UserController extends Controller
             'password' => Hash::make($request['password']),
             'kecamatan' => $request->kecamatan,
             'desa' => $request->desa,
-            'image' => $request->image
+            // 'image' => $request->image
 
         );
-        if ($image = $request->file('image')) {
-            $destinationPath = 'image/';
-            $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destinationPath, $profileImage);
-            $input['image'] = "$profileImage";
-        }
+        // if ($image = $request->file('image')) {
+        //     $destinationPath = 'image/';
+        //     $profileImage = date('YmdHis') . "." . $image->getClientOriginalExtension();
+        //     $image->move($destinationPath, $profileImage);
+        //     $input['image'] = "$profileImage";
+        // }
 
 
         User::insert($user);

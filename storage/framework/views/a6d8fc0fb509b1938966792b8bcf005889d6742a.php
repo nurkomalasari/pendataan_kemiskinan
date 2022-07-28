@@ -1,8 +1,8 @@
-<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <div class="p-2">
     <div class="form-group">
 
-        {{-- <input type="text" name="id_alamat" placeholder="Alamat" id="alamat" class="form-control"><br> --}}
+        
         <input type="text" name="name" placeholder="Nama" id="name" class="form-control"><br>
         <input type="email" name="email" placeholder="Email" id="email" class="form-control"><br>
         <input type="text" name="password" placeholder="Password" id="password" class="form-control"><br>
@@ -10,9 +10,9 @@
         <select class="form-select" id="kecamatan" name="kecamatan" required>
             <option value="">Pilih Kecamatan</option>
 
-            @foreach ($districts as $district)
-                <option value="{{ $district->id }}">{{ $district->name }}</option>
-            @endforeach
+            <?php $__currentLoopData = $districts; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $district): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($district->id); ?>"><?php echo e($district->name); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </select><br>
 
@@ -20,7 +20,7 @@
             <option value="">Pilih Desa</option>
         </select>
         <br>
-        {{-- <input type="file" name="image" id="image"> --}}
+        
 
 
 
@@ -47,7 +47,7 @@
 
                 $.ajax({
                     type: 'get',
-                    url: "{{ route('getdesa_user') }}",
+                    url: "<?php echo e(route('getdesa_user')); ?>",
                     data: {
                         kecamatan: kecamatan
                     },
@@ -64,3 +64,4 @@
         });
     });
 </script>
+<?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/user/create.blade.php ENDPATH**/ ?>

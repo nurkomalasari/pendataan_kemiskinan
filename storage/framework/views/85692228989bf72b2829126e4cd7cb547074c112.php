@@ -1,8 +1,7 @@
-@extends('layouts.main')
-@section('title', 'Manage Data Pengguna')
-@section('page', 'Data Pengguna')
+<?php $__env->startSection('title', 'Manage Data Pengguna'); ?>
+<?php $__env->startSection('page', 'Data Pengguna'); ?>
 
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <body>
         <div class="row">
@@ -39,7 +38,7 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    {{-- <button type="button" class="btn btn-primary">Save changes</button> --}}
+                                    
                                 </div>
                             </div>
                         </div>
@@ -71,14 +70,14 @@
 
 
                     function read() {
-                        $.get("{{ url('pengguna/read') }}", {}, function(data, status) {
+                        $.get("<?php echo e(url('pengguna/read')); ?>", {}, function(data, status) {
                             $('#read').html(data);
 
                         });
                     }
 
                     function create() {
-                        $.get("{{ url('pengguna/create') }}", {}, function(data, status) {
+                        $.get("<?php echo e(url('pengguna/create')); ?>", {}, function(data, status) {
                             $('#page').html(data);
                             $('#exampleModalLabel').html('Tambah pengguna');
                             $('#exampleModal').modal('show');
@@ -96,7 +95,7 @@
 
                         $.ajax({
                             type: "get",
-                            url: "{{ url('pengguna/store') }}",
+                            url: "<?php echo e(url('pengguna/store')); ?>",
                             data: {
                                 name: name,
                                 email: email,
@@ -115,7 +114,7 @@
                     }
 
                     function show(id) {
-                        $.get("{{ url('pengguna/show') }}/" + id, {}, function(data, status) {
+                        $.get("<?php echo e(url('pengguna/show')); ?>/" + id, {}, function(data, status) {
                             $('#page').html(data);
                             $('#exampleModalLabel').html('Edite pengguna');
                             $('#exampleModal').modal('show');
@@ -132,7 +131,7 @@
                         // var image = $("#image").val();
                         $.ajax({
                             type: "get",
-                            url: "{{ url('pengguna/update') }}/" + id,
+                            url: "<?php echo e(url('pengguna/update')); ?>/" + id,
                             data: {
                                 name: name,
                                 email: email,
@@ -159,7 +158,7 @@
 
                         $.ajax({
                             type: "get",
-                            url: "{{ url('pengguna/destroy') }}/" + id,
+                            url: "<?php echo e(url('pengguna/destroy')); ?>/" + id,
                             success: function(data) {
                                 $("#page").html('');
                                 // $(".btn-close").click();
@@ -169,4 +168,6 @@
 
                     }
                 </script>
-            @endsection
+            <?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/user/index.blade.php ENDPATH**/ ?>

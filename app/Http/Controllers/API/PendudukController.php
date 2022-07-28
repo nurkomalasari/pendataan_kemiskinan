@@ -13,7 +13,7 @@ class PendudukController extends Controller
 {
     public function index()
     {
-        $penduduk = Penduduk::with(['district', 'village'])->get();
+        $penduduk = Penduduk::with(['district', 'village', 'status'])->get();
         if ($penduduk) {
             return ResponseFormatter::success(
                 $penduduk,
@@ -30,7 +30,7 @@ class PendudukController extends Controller
 
     public function pendudukById($id)
     {
-        $data = Penduduk::with(['district', 'village'])->findOrFail($id);
+        $data = Penduduk::with(['district', 'village', 'status'])->findOrFail($id);
         if ($data) {
             return ResponseFormatter::success(
                 $data,

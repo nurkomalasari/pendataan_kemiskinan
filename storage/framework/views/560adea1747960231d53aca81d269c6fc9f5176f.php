@@ -24,6 +24,19 @@
     <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/templatemo-digimedia-v1.css">
     <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/animated.css">
     <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/owl.css">
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+                                    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+                                    crossorigin="" />
+                                <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+                                    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+                                    crossorigin=""></script>
+                                <style>
+                                    #map {
+
+                                        width:100%;
+                                        height:636px
+                                    }
+                                </style>
     <!--
 
 TemplateMo 568 DigiMedia
@@ -303,12 +316,12 @@ https://templatemo.com/tm-568-digimedia
                                         alt="">
                                 </div>
                             </div>
+
+
+
                             <div class="col-lg-12">
-                                <div id="map">
-                                    <iframe
-                                        src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                        width="100%" height="636px" frameborder="0" style="border:0"
-                                        allowfullscreen></iframe>
+                                <div id="map"  frameborder="0" style="border:0"
+                                        allowfullscreen>
                                 </div>
                             </div>
 
@@ -361,6 +374,93 @@ https://templatemo.com/tm-568-digimedia
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
             chart.draw(data, options);
         }
+    </script>
+
+    <script>
+        var map = L.map('map').setView([-6.406576, 108.282833], 13);
+        // var map = L.map('map').setView([119.2167217, -0.3375404], 13);
+        var gold = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var red = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var green = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
+
+        var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+        }).addTo(map);
+
+        // <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+        //     var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>]).addTo(map);
+        // <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+
+        <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($item->hasilClustering[0]->cluster == 0): ?>
+
+
+                var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
+                        icon: red,
+                    }).addTo(
+                        map)
+                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
+
+
+            <?php elseif($item->hasilClustering[0]->cluster == 1): ?>
+
+
+                var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
+                        icon: gold
+                    }).addTo(
+                        map)
+                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
+
+
+            <?php elseif($item->hasilClustering[0]->cluster == 2): ?>
+
+
+                var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    maxZoom: 19,
+                    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                }).addTo(map);
+
+                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
+                        icon: green
+                    }).addTo(
+                        map)
+                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </script>
 
 </body>
