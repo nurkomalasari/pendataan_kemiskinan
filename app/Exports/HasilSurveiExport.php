@@ -35,6 +35,7 @@ class HasilSurveiExport implements FromCollection, WithHeadings, WithMapping
             $request->penduduk->district->name,
             $request->id_opsi_jawaban,
             $request->tanggal,
+
         ];
     }
 }

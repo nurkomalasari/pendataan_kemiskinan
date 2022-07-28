@@ -13,12 +13,12 @@
         <input type="date" name="tanggal_lahir" placeholder="Tanggal lahir" id="tanggal_lahir" class="form-control"
             value="{{ $data->tanggal_lahir }}"><br>
         <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" aria-label="Default select example">
-            <option selected>{{ $data->jenis_kelamin }}</option>
+            <option value="{{ $data->jenis_kelamin }}" selected>{{ $data->jenis_kelamin }}</option>
             <option value="Perempuan">Perempuan</option>
             <option value="Laki - Laki">Laki - Laki</option>
         </select><br>
         <select class="form-select" id="agama" name="agama" aria-label="Default select example">
-            <option selected>{{ $data->agama }}</option>
+            <option value="{{ $data->agama }}" selected>{{ $data->agama }}</option>
             <option value="Islam">Islam</option>
             <option value="Kristen">Kristen</option>
             <option value="Hindu">Hindu</option>
@@ -26,7 +26,8 @@
             <option value="Khonghucu">Khonghucu</option>
         </select><br>
         <select class="form-select" id="id_status" name="id_status" required>
-            <option value="">{{ $data->status->status_penduduk ?? '' }}</option>
+            <option value=" {{ $data->id_status }}">{{ $data->status->status_penduduk ?? '' }}
+            </option>
 
             @foreach ($status as $item)
                 <option value="{{ $item->id }}" {{ old('id_status') == $item->id ? 'selected' : '' }}>
@@ -38,7 +39,7 @@
             value="{{ $data->pekerjaan }}"><br>
 
         <select class="form-select" id="district_id" name="district_id" required>
-            <option value="">{{ $data->district->name ?? '' }}</option>
+            <option value="{{ $data->district_id }}">{{ $data->district->name ?? '' }}</option>
 
             @foreach ($districts as $district)
                 <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -47,7 +48,7 @@
         </select><br>
 
         <select class="form-select" id="village_id" name="village_id" required>
-            <option value="">{{ $data->village->name ?? '' }}</option>
+            <option value="{{ $data->village_id }}">{{ $data->village->name ?? '' }}</option>
 
         </select>
         <label for="exampleFormControlTextarea1" class="form-label">Alamat Lengkap</label>

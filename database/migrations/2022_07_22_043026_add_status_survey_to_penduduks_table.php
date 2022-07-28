@@ -14,6 +14,8 @@ class AddStatusSurveyToPenduduksTable extends Migration
     public function up()
     {
         Schema::table('penduduks', function (Blueprint $table) {
+            $table->string('nik')->after('id');
+            $table->string('kks')->nullable()->after('nik');
             $table->enum('status_survey', ['Sudah disurvey', 'Belum disurvey'])->default('Belum disurvey');
         });
     }

@@ -204,3 +204,7 @@ Route::get('/item_data_cluster_tiga', [HasilClusteringController::class, 'cluste
 Route::get('/groupCluster/echart', [HasilClusteringController::class, 'echart']);
 
 Route::get('/kemiskinan_kecamatan', [HasilClusteringController::class, 'clusterPerKecamatan']);
+
+Route::get('/maps', function () {
+    return view('maps');
+});

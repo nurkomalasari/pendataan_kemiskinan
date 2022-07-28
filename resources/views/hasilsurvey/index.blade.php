@@ -75,8 +75,7 @@
                         var id_penduduk = $("#id_penduduk").val();
                         // var id_opsi_jawaban = $(".opsi-jawaban").val();
                         var tanggal = $("#tanggal").val();
-                        var longitude = $("#longitude").val();
-                        var latitude = $("#latitude").val();
+
 
                         var id_opsi_jawaban = [];
                         /*Initializing array with Checkbox checked values*/
@@ -94,8 +93,7 @@
                                 id_penduduk: id_penduduk,
                                 id_opsi_jawaban: id_opsi_jawaban,
                                 tanggal: tanggal,
-                                longitude: longitude,
-                                latitude: latitude,
+
 
 
 
@@ -126,8 +124,7 @@
                         var id_penduduk = $("#id_penduduk").val();
                         var id_opsi_jawaban = $(".opsi-jawaban").val();
                         var tanggal = $("#tanggal").val();
-                        var longitude = $("#longitude").val();
-                        var latitude = $("#latitude").val();
+
 
                         $.ajax({
                             type: "get",
@@ -136,8 +133,7 @@
                                 id_penduduk: id_penduduk,
                                 id_opsi_jawaban: id_opsi_jawaban,
                                 tanggal: tanggal,
-                                longitude: longitude,
-                                latitude: latitude,
+
 
                             },
 

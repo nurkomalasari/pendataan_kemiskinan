@@ -18,8 +18,6 @@ class CreateHasilSurveisTable extends Migration
             $table->foreignId('id_penduduk');
             $table->foreignId('id_opsi_jawaban');
             $table->date('tanggal');
-            $table->float('longitude');
-            $table->float('latitude');
             $table->softDeletes();
             $table->timestamps();
         });

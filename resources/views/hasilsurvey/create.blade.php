@@ -29,8 +29,6 @@
         <br>
 
         <input type="date" name="tanggal" placeholder="Tanggal Survey" id="tanggal" class="form-control"><br>
-        <input type="text" name="longitude" placeholder="Logitude" id="longitude" class="form-control"><br>
-        <input type="text" name="latitude" placeholder="Latitude" id="latitude" class="form-control"><br>
 
 
         <div class="d-grid gap-2 col-6 mx-auto">

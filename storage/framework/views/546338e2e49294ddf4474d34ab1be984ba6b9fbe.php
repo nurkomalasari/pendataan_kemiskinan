@@ -241,8 +241,9 @@
 
 
                 <script>
-                    var map = L.map('map').setView([parseFloat('<?php echo e($maps[0]->latitude); ?>'), parseFloat('<?php echo e($maps[0]->longitude); ?>')],
-                        18);
+
+                    var map = L.map('map').setView([-6.406576, 108.282833], 13);
+                    // var map = L.map('map').setView([119.2167217, -0.3375404], 13);
                     var gold = new L.Icon({
                         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
                         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -270,7 +271,14 @@
                         shadowSize: [41, 41]
                     });
 
+                    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                    }).addTo(map);
 
+                    // <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    //     var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>]).addTo(map);
+                    // <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
                     <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if($item->hasilClustering[0]->cluster == 0): ?>
@@ -278,43 +286,40 @@
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('<?php echo e($item->latitude); ?>'), parseFloat(
-                                    '<?php echo e($item->longitude); ?>')], {
+                            var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                                     icon: red,
                                 }).addTo(
                                     map)
                                 .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
-                        <?php endif; ?>
 
-                        <?php if($item->hasilClustering[0]->cluster == 1): ?>
+
+                        <?php elseif($item->hasilClustering[0]->cluster == 1): ?>
 
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('<?php echo e($item->latitude); ?>'), parseFloat(
-                                    '<?php echo e($item->longitude); ?>')], {
+                            var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                                     icon: gold
                                 }).addTo(
                                     map)
                                 .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
-                        <?php endif; ?>
 
-                        <?php if($item->hasilClustering[0]->cluster == 2): ?>
+
+                        <?php elseif($item->hasilClustering[0]->cluster == 2): ?>
 
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('<?php echo e($item->latitude); ?>'), parseFloat(
-                                    '<?php echo e($item->longitude); ?>')], {
+                            var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                                     icon: green
                                 }).addTo(
                                     map)
@@ -322,8 +327,6 @@
                         <?php endif; ?>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </script>
-
-
 
 
                 <script>

@@ -242,8 +242,9 @@
 
 
                 <script>
-                    var map = L.map('map').setView([parseFloat('{{ $maps[0]->latitude }}'), parseFloat('{{ $maps[0]->longitude }}')],
-                        18);
+
+                    var map = L.map('map').setView([-6.406576, 108.282833], 13);
+                    // var map = L.map('map').setView([119.2167217, -0.3375404], 13);
                     var gold = new L.Icon({
                         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
                         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -271,7 +272,14 @@
                         shadowSize: [41, 41]
                     });
 
+                    var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                    }).addTo(map);
 
+                    // @foreach ($maps as $item)
+
+                    //     var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}]).addTo(map);
+                    // @endforeach
 
                     @foreach ($maps as $item)
                         @if ($item->hasilClustering[0]->cluster == 0)
@@ -279,43 +287,40 @@
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('{{ $item->latitude }}'), parseFloat(
-                                    '{{ $item->longitude }}')], {
+                            var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}], {
                                     icon: red,
                                 }).addTo(
                                     map)
                                 .bindPopup('<b>{{ $item->district->name }}</b><br/> <b>{{ $item->nama }}</b>.').openPopup();
-                        @endif
 
-                        @if ($item->hasilClustering[0]->cluster == 1)
+
+                        @elseif ($item->hasilClustering[0]->cluster == 1)
 
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('{{ $item->latitude }}'), parseFloat(
-                                    '{{ $item->longitude }}')], {
+                            var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}], {
                                     icon: gold
                                 }).addTo(
                                     map)
                                 .bindPopup('<b>{{ $item->district->name }}</b><br/> <b>{{ $item->nama }}</b>.').openPopup();
-                        @endif
 
-                        @if ($item->hasilClustering[0]->cluster == 2)
+
+                        @elseif ($item->hasilClustering[0]->cluster == 2)
 
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                                 maxZoom: 19,
-                                attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                             }).addTo(map);
 
-                            var marker = L.marker([parseFloat('{{ $item->latitude }}'), parseFloat(
-                                    '{{ $item->longitude }}')], {
+                            var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}], {
                                     icon: green
                                 }).addTo(
                                     map)
@@ -323,8 +328,6 @@
                         @endif
                     @endforeach
                 </script>
-
-
 
 
                 <script>
