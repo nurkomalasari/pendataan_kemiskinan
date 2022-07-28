@@ -12,7 +12,7 @@
         <select class="form-select" id="jenis_kelamin" name="jenis_kelamin" aria-label="Default select example">
             <option selected>------Jenis Kelamin -----</option>
             <option value="Perempuan">Perempuan</option>
-            <option value="Laki - Laki">Laki - Laki</option>
+            <option value="Laki-Laki">Laki - Laki</option>
         </select><br>
         <select class="form-select" id="agama" name="agama" aria-label="Default select example">
             <option selected>------Pilih Agama-----</option>
