@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\DashboardController;
 use App\Http\Controllers\API\HasilSurveyController;
 use App\Http\Controllers\API\LoginController;
 use App\Http\Controllers\API\OpsiJawabanController;
@@ -31,6 +32,8 @@ Route::get('/user/all', [LoginController::class, 'getUser']);
 
 Route::get('/pendudukByDistrict', [PendudukController::class, 'searchByDistrict']);
 Route::get('/list_district', [PendudukController::class, 'districtAll']);
+Route::get('/totalPenduduk', [DashboardController::class, 'dashboard']);
+
 
 
 

@@ -47,13 +47,11 @@ class LoginController extends Controller
         );
     }
 
-    public function getUser()
+    public function getUser(Request $request)
     {
-        $user = User::all();
+        $user = User::find($request->input('id'));
         return  ResponseFormatter::success(
-            [
-                "user" => $user
-            ]
+            $user
         );
     }
 }
