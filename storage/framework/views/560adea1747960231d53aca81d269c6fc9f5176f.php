@@ -368,7 +368,7 @@ https://templatemo.com/tm-568-digimedia
             var options = {
                 title: 'Data Kemiskinan',
                 is3D: true,
-                colors: ['#c90076', '#c27ba0', '#d5a6bd']
+                colors: ['#c90076', '#d5a6bd']
             };
 
             var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -379,14 +379,14 @@ https://templatemo.com/tm-568-digimedia
     <script>
         var map = L.map('map').setView([-6.406576, 108.282833], 13);
         // var map = L.map('map').setView([119.2167217, -0.3375404], 13);
-        var gold = new L.Icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-        });
+        // var gold = new L.Icon({
+        //     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+        //     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+        //     iconSize: [25, 41],
+        //     iconAnchor: [12, 41],
+        //     popupAnchor: [1, -34],
+        //     shadowSize: [41, 41]
+        // });
 
         var red = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -440,25 +440,11 @@ https://templatemo.com/tm-568-digimedia
                 }).addTo(map);
 
                 var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
-                        icon: gold
-                    }).addTo(
-                        map)
-                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
-
-
-            <?php elseif($item->hasilClustering[0]->cluster == 2): ?>
-
-
-                var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    maxZoom: 19,
-                    // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                }).addTo(map);
-
-                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                         icon: green
                     }).addTo(
                         map)
                     .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
+
             <?php endif; ?>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </script>

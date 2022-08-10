@@ -41,11 +41,6 @@
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">
                     Hasil Clustering</th>
 
-
-
-
-
-
             </tr>
         </thead>
         <?php $no = 1; ?>

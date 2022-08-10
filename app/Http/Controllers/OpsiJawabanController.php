@@ -26,6 +26,7 @@ class OpsiJawabanController extends Controller
     public function create()
     {
         $pertanyaan = Pertanyaan::all();
+
         return view('opsiJawaban.create', compact('pertanyaan'));
     }
 

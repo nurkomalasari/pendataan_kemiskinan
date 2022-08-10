@@ -6,8 +6,8 @@
 
 
 
-        <select class="form-select" id="district_id" name="district_id" required>
-            <option value="{{ $data->pertanyaan->Isi_pertanyaan }}">
+        <select class="form-select" id="id_pertanyaan" name="id_pertanyaan" required>
+            <option value="{{ $data->id }}">
                 {{ $data->pertanyaan->Isi_pertanyaan }}</option>
 
             @foreach ($pertanyaan as $item)

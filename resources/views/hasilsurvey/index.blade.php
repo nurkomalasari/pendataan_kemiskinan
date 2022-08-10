@@ -122,7 +122,11 @@
 
                     function edit(id) {
                         var id_penduduk = $("#id_penduduk").val();
-                        var id_opsi_jawaban = $(".opsi-jawaban").val();
+                        var id_opsi_jawaban = [];
+                        /*Initializing array with Checkbox checked values*/
+                        $(".opsi-jawaban option:selected").each(function() {
+                            id_opsi_jawaban.push(this.value);
+                        });
                         var tanggal = $("#tanggal").val();
 
 

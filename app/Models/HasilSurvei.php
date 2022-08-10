@@ -23,4 +23,9 @@ class HasilSurvei extends Model
     {
         return $this->belongsTo(Penduduk::class, 'id_penduduk');
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class, 'hasil_survey_id');
+    }
 }

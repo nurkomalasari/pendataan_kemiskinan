@@ -26,11 +26,9 @@ class HasilClusteringController extends Controller
 
         foreach ($data as $key => $value) {
             if ($value->cluster == 0) {
-                $x = 'miskin';
+                $x = 'Miskin';
             } elseif ($value->cluster == 1) {
-                $x = 'miskin menengah';
-            } elseif ($value->cluster == 2) {
-                $x = 'Tidak miskin';
+                $x = 'Tidak Miskin';
             }
             $array[++$key] = [$x, $value->number];
         }
@@ -45,7 +43,7 @@ class HasilClusteringController extends Controller
     }
     public function read()
     {
-        $clustering = HasilClustering::with(['penduduk.district'])->orderBy('FIELD1', 'DESC')->get();
+        $clustering = HasilClustering::with(['penduduk.district'])->orderBy('id', 'DESC')->get();
         // dd($clustering);
 
 
@@ -80,11 +78,9 @@ class HasilClusteringController extends Controller
 
         foreach ($data as $key => $value) {
             if ($value->cluster == 0) {
-                $x = 'miskin';
+                $x = 'Miskin';
             } elseif ($value->cluster == 1) {
-                $x = 'miskin menengah';
-            } elseif ($value->cluster == 2) {
-                $x = 'Tidak miskin';
+                $x = 'Tidak Miskin ';
             }
             $array[++$key] = [$x, $value->number];
         }

@@ -4,79 +4,6 @@
 <?php $__env->startSection('content'); ?>
 
     <body>
-        <h6>Hasil Silhoutte</h6>
-        <div class="row">
-
-            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3 cluster_satu">
-                <div class="card" style="background-color: #c90076 ">
-                    <div class="card-body p-3">
-                        <div class="row card-purple">
-                            <div class="col-8">
-                                <div class="numbers">
-                                    <h6 class="text-sm mb-0 text-capitalize font-weight-bold" style="color:white">Cluster 1
-                                    </h6>
-                                    <h5 class="font-weight-bolder mb-0" style="color:white">
-                                        Miskin
-
-                                        <span
-                                            class="text-light text-sm font-weight-bolder font-white"><?php echo e($data[2]); ?></span>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="col-4 text-end">
-
-                                <i class="far fa-chart-scatter"></i>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3 cluster_dua">
-                <div class="card" style="background-color: #c27ba0">
-                    <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="numbers">
-                                    <p class="text-sm mb-0 text-capitalize font-weight-bold" style="color:white">Cluster 2
-                                    </p>
-                                    <h5 class="font-weight-bolder mb-0" style="color:white">
-                                        Menengah
-                                        <span class="text-light text-sm font-weight-bolder"><?php echo e($data[3]); ?></span>
-                                    </h5>
-                                </div>
-                            </div>
-                            <div class="col-4 text-end">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3 cluster_tiga">
-                <div class="card" style="background-color: #d5a6bd">
-                    <div class="card-body p-3">
-                        <div class="row">
-                            <div class="col-8">
-                                <div class="numbers">
-                                    <p class="text-sm mb-0 text-capitalize font-weight-bold" style="color:white">Cluster 3
-                                    </p>
-                                    <h5 class="font-weight-bolder mb-0" style="color:white">
-                                        Tidak Miskin
-                                        <span class="text-light text-sm font-weight-bolder"><?php echo e($data[4]); ?></span>
-                                    </h5>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
         <div class="row mt-3">
             <h6>Jumlah Data</h6>
 
@@ -135,6 +62,62 @@
 
 
         </div>
+        <h6>Hasil Silhoutte</h6>
+        <div class="row">
+
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3 cluster_satu">
+                <div class="card" style="background-color: #c90076 ">
+                    <div class="card-body p-3">
+                        <div class="row card-purple">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <h6 class="text-sm mb-0 text-capitalize font-weight-bold" style="color:white">Cluster 1
+                                    </h6>
+                                    <h5 class="font-weight-bolder mb-0" style="color:white">
+                                        Miskin
+
+                                        <span
+                                            class="text-light text-sm font-weight-bolder font-white"><?php echo e($data[2]); ?></span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+
+                                <i class="far fa-chart-scatter"></i>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-3 cluster_dua">
+                <div class="card" style="background-color: #c27ba0">
+                    <div class="card-body p-3">
+                        <div class="row">
+                            <div class="col-8">
+                                <div class="numbers">
+                                    <p class="text-sm mb-0 text-capitalize font-weight-bold" style="color:white">Cluster 2
+                                    </p>
+                                    <h5 class="font-weight-bolder mb-0" style="color:white">
+                                        Tidak Miskin
+                                        <span class="text-light text-sm font-weight-bolder"><?php echo e($data[3]); ?></span>
+                                    </h5>
+                                </div>
+                            </div>
+                            <div class="col-4 text-end">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+
+
 
         
 
@@ -231,7 +214,7 @@
                         var options = {
                             title: 'Data Kemiskinan',
                             is3D: true,
-                            colors: ['#c90076', '#c27ba0', '#d5a6bd']
+                            colors: ['#c90076', '#d5a6bd']
                         };
 
                         var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
@@ -244,14 +227,14 @@
 
                     var map = L.map('map').setView([-6.406576, 108.282833], 13);
                     // var map = L.map('map').setView([119.2167217, -0.3375404], 13);
-                    var gold = new L.Icon({
-                        iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-                        shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                        iconSize: [25, 41],
-                        iconAnchor: [12, 41],
-                        popupAnchor: [1, -34],
-                        shadowSize: [41, 41]
-                    });
+                    // var gold = new L.Icon({
+                    //     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
+                    //     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    //     iconSize: [25, 41],
+                    //     iconAnchor: [12, 41],
+                    //     popupAnchor: [1, -34],
+                    //     shadowSize: [41, 41]
+                    // });
 
                     var red = new L.Icon({
                         iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -297,21 +280,6 @@
 
 
                         <?php elseif($item->hasilClustering[0]->cluster == 1): ?>
-
-
-                            var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                                maxZoom: 19,
-                                // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                            }).addTo(map);
-
-                            var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
-                                    icon: gold
-                                }).addTo(
-                                    map)
-                                .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
-
-
-                        <?php elseif($item->hasilClustering[0]->cluster == 2): ?>
 
 
                             var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

@@ -35,7 +35,7 @@ class PendudukImport implements ToModel, WithHeadingRow
             'nik'             => $row['nik'],
             'kks'             => $row['kks'],
             'nama'             => $row['nama'],
-            'tanggal_lahir'    => $row['tanggal_lahir'],
+            'tanggal_lahir'    => \PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($row['tanggal_lahir']),
             'jenis_kelamin'    => $row['jenis_kelamin'],
             'agama'            => $row['agama'],
             'id_status'        => $status->id,

@@ -1,17 +1,17 @@
-<meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <div class="p-2">
     <div class="form-group">
 
-        {{-- <input type="text" name="id_alamat" placeholder="Alamat" id="alamat" class="form-control"><br> --}}
+        
 
 
 
         <select class="form-select" id="id_pertanyaan" name="id_pertanyaan" required>
             <option value="">Pilih Pertanyaan</option>
 
-            @foreach ($pertanyaan as $item)
-                <option value="{{ $item->id }}">{{ $item->Isi_pertanyaan }}</option>
-            @endforeach
+            <?php $__currentLoopData = $pertanyaan; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <option value="<?php echo e($item->id); ?>"><?php echo e($item->Isi_pertanyaan); ?></option>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
         </select><br>
         <input type="text" name="pilihan_jawaban" placeholder="Pilihan Jawaban" id="pilihan_jawaban"
@@ -30,3 +30,4 @@
     </div>
 
 </div>
+<?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/opsiJawaban/create.blade.php ENDPATH**/ ?>
