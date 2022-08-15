@@ -15,15 +15,15 @@
     <title>Penkin | Aplikasi Pendataan Kemiskinan</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="{{ asset('LandingPage') }}/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo e(asset('LandingPage')); ?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="{{ asset('LandingPage') }}/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="{{ asset('LandingPage') }}/assets/css/templatemo-digimedia-v1.css">
-    <link rel="stylesheet" href="{{ asset('LandingPage') }}/assets/css/animated.css">
-    <link rel="stylesheet" href="{{ asset('LandingPage') }}/assets/css/owl.css">
+    <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/templatemo-digimedia-v1.css">
+    <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/animated.css">
+    <link rel="stylesheet" href="<?php echo e(asset('LandingPage')); ?>/assets/css/owl.css">
       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
                                     integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
                                     crossorigin="" />
@@ -71,7 +71,7 @@ https://templatemo.com/tm-568-digimedia
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="/" class="logo">
-                            <img src="{{ asset('LandingPage') }}/assets/images/logo1.png" alt="">
+                            <img src="<?php echo e(asset('LandingPage')); ?>/assets/images/logo1.png" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -81,7 +81,7 @@ https://templatemo.com/tm-568-digimedia
                             <li class="scroll-to-section"><a href="#services">Presentase Kemiskinan</a></li>
                             <li class="scroll-to-section"><a href="#contact">Peta Sebaran</a></li>
                             <li class="scroll-to-section">
-                                <div class="border-first-button"><a href="{{ route('form-login') }}">Login</a></div>
+                                <div class="border-first-button"><a href="<?php echo e(route('form-login')); ?>">Login</a></div>
                             </li>
                         </ul>
                         <a class='menu-trigger'>
@@ -120,7 +120,7 @@ https://templatemo.com/tm-568-digimedia
                         </div>
                         <div class="col-lg-6">
                             <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="{{ asset('LandingPage') }}/assets/images/Proverty.png" alt="">
+                                <img src="<?php echo e(asset('LandingPage')); ?>/assets/images/Proverty.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ https://templatemo.com/tm-568-digimedia
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="{{ asset('LandingPage') }}/assets/images/about-dec.png" alt="">
+                                <img src="<?php echo e(asset('LandingPage')); ?>/assets/images/about-dec.png" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s"
@@ -230,7 +230,7 @@ https://templatemo.com/tm-568-digimedia
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-dec">
-                                    <img src="{{ asset('LandingPage') }}/assets/images/contact-dec.png"
+                                    <img src="<?php echo e(asset('LandingPage')); ?>/assets/images/contact-dec.png"
                                         alt="">
                                 </div>
                             </div>
@@ -266,12 +266,12 @@ https://templatemo.com/tm-568-digimedia
 
 
     <!-- Scripts -->
-    <script src="{{ asset('LandingPage') }}/vendor/jquery/jquery.min.js"></script>
-    <script src="{{ asset('LandingPage') }}/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('LandingPage') }}/assets/js/owl-carousel.js"></script>
-    <script src="{{ asset('LandingPage') }}/assets/js/animation.js"></script>
-    <script src="{{ asset('LandingPage') }}/assets/js/imagesloaded.js"></script>
-    <script src="{{ asset('LandingPage') }}/assets/js/custom.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/assets/js/owl-carousel.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/assets/js/animation.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/assets/js/imagesloaded.js"></script>
+    <script src="<?php echo e(asset('LandingPage')); ?>/assets/js/custom.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
         google.charts.load("current", {
@@ -281,7 +281,7 @@ https://templatemo.com/tm-568-digimedia
 
         function drawChart() {
 
-            var data = google.visualization.arrayToDataTable({{ Js::from($array) }});
+            var data = google.visualization.arrayToDataTable(<?php echo e(Js::from($array)); ?>);
 
             var options = {
                 title: 'Data Kemiskinan',
@@ -328,13 +328,13 @@ https://templatemo.com/tm-568-digimedia
             maxZoom: 19,
         }).addTo(map);
 
-        // @foreach ($maps as $item)
+        // <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
-        //     var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}]).addTo(map);
-        // @endforeach
+        //     var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>]).addTo(map);
+        // <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 
-        @foreach ($maps as $item)
-            @if ($item->hasilClustering[0]->cluster == 0)
+        <?php $__currentLoopData = $maps; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <?php if($item->hasilClustering[0]->cluster == 0): ?>
 
 
                 var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -342,14 +342,14 @@ https://templatemo.com/tm-568-digimedia
                     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 }).addTo(map);
 
-                var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}], {
+                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                         icon: red,
                     }).addTo(
                         map)
-                    .bindPopup('<b>{{ $item->district->name }}</b><br/> <b>{{ $item->nama }}</b>.').openPopup();
+                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
 
 
-            @elseif ($item->hasilClustering[0]->cluster == 1)
+            <?php elseif($item->hasilClustering[0]->cluster == 1): ?>
 
 
                 var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -357,16 +357,17 @@ https://templatemo.com/tm-568-digimedia
                     // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                 }).addTo(map);
 
-                var marker = L.marker([{{ $item->longitude }}, {{ $item->latitude }}], {
+                var marker = L.marker([<?php echo e($item->longitude); ?>, <?php echo e($item->latitude); ?>], {
                         icon: green
                     }).addTo(
                         map)
-                    .bindPopup('<b>{{ $item->district->name }}</b><br/> <b>{{ $item->nama }}</b>.').openPopup();
+                    .bindPopup('<b><?php echo e($item->district->name); ?></b><br/> <b><?php echo e($item->nama); ?></b>.').openPopup();
 
-            @endif
-        @endforeach
+            <?php endif; ?>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </script>
 
 </body>
 
 </html>
+<?php /**PATH D:\AKADEMIK\SKRIPSI 2022\Aplikasi_pendataan_kemiskinan\Pendataan_kemiskinan\resources\views/welcome.blade.php ENDPATH**/ ?>
